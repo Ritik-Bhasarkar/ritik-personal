@@ -1,0 +1,16 @@
+:root {
+    --color-footer-button-fg-light: var(--color-brand-200);
+    --color-footer-button-fg-dark: var(--color-gray-dark-300);
+
+    --color-footer-button-fg-hover-light: var(--color-white);
+    --color-footer-button-fg-hover-dark: var(--color-gray-dark-100);
+
+    --color-footer-badge-fg-light: var(--color-success-700);
+    --color-footer-badge-fg-dark: var(--color-white);
+
+    --color-footer-badge-bg-light: var(--color-success-50);
+    --color-footer-badge-bg-dark: var(--color-alpha-white-10-light);
+
+    --color-footer-badge-border-light: var(--color-success-200);
+    --color-footer-badge-border-dark: var(--color-alpha-white-30-light);
+}

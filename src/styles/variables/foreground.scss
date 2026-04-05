@@ -1,0 +1,115 @@
+:root {
+    --color-fg-primary-light: var(--color-gray-light-900);
+    --color-fg-primary-dark: var(--color-white);
+
+    --color-fg-secondary-light: var(--color-gray-light-700);
+    --color-fg-secondary-dark: var(--color-gray-dark-300);
+
+    --color-fg-secondary-hover-light: var(--color-gray-light-800);
+    --color-fg-secondary-hover-dark: var(--color-gray-dark-200);
+
+    --color-fg-tertiary-light: var(--color-gray-light-600);
+    --color-fg-tertiary-dark: var(--color-gray-dark-400);
+
+    --color-fg-tertiary-hover-light: var(--color-gray-light-700);
+    --color-fg-tertiary-hover-dark: var(--color-gray-dark-300);
+
+    --color-fg-quaternary-light: var(--color-gray-light-500);
+    --color-fg-quaternary-dark: var(--color-gray-dark-400);
+
+    --color-fg-quaternary-hover-light: var(--color-gray-light-600);
+    --color-fg-quaternary-hover-dark: var(--color-gray-dark-300);
+
+    --color-fg-quinary-light: var(--color-gray-light-400);
+    --color-fg-quinary-dark: var(--color-gray-dark-500);
+
+    --color-fg-quinary-hover-light: var(--color-gray-light-500);
+    --color-fg-quinary-hover-dark: var(--color-gray-dark-400);
+
+    --color-fg-senary-light: var(--color-gray-light-300);
+    --color-fg-senary-dark: var(--color-gray-dark-600);
+
+    --color-fg-white-light: var(--color-white);
+    --color-fg-white-dark: var(--color-white);
+
+    --color-fg-disabled-light: var(--color-gray-light-400);
+    --color-fg-disabled-dark: var(--color-gray-dark-500);
+
+    --color-fg-disabled-subtle-light: var(--color-gray-light-300);
+    --color-fg-disabled-subtle-dark: var(--color-gray-dark-600);
+
+    --color-fg-brand-primary-light: var(--color-brand-600);
+    --color-fg-brand-primary-dark: var(--color-brand-500);
+
+    --color-fg-brand-primary-alt-light: var(--color-brand-600);
+    --color-fg-brand-primary-alt-dark: var(--color-gray-dark-400);
+
+    --color-fg-brand-secondary-light: var(--color-brand-500);
+    --color-fg-brand-secondary-dark: var(--color-brand-500);
+
+    --color-fg-error-primary-light: var(--color-error-600);
+    --color-fg-error-primary-dark: var(--color-error-500);
+
+    --color-fg-error-secondary-light: var(--color-error-500);
+    --color-fg-error-secondary-dark: var(--color-error-400);
+
+    --color-fg-warning-primary-light: var(--color-warning-600);
+    --color-fg-warning-primary-dark: var(--color-warning-500);
+
+    --color-fg-warning-secondary-light: var(--color-warning-500);
+    --color-fg-warning-secondary-dark: var(--color-warning-400);
+
+    --color-fg-success-primary-light: var(--color-success-600);
+    --color-fg-success-primary-dark: var(--color-success-500);
+
+    --color-fg-success-secondary-light: var(--color-success-500);
+    --color-fg-success-secondary-dark: var(--color-success-400);
+
+    --color-fg-pink-light: var(--color-pink-500);
+    --color-fg-pink-dark: var(--color-pink-500);
+
+    --color-fg-blue-light: var(--color-blue-500);
+    --color-fg-blue-dark: var(--color-blue-500);
+
+    --color-fg-indigo-light: var(--color-indigo-500);
+    --color-fg-indigo-dark: var(--color-indigo-500);
+
+    --color-fg-purple-light: var(--color-purple-500);
+    --color-fg-purple-dark: var(--color-purple-500);
+
+    --color-fg-brand-hover-light: var(--color-brand-50);
+    --color-fg-brand-hover-dark: var(--color-gray-dark-800);
+
+    --color-fg-hover-light: var(--color-gray-light-700);
+    --color-fg-hover-dark: var(--color-white);
+
+    --color-fg-light-brand-light: var(--color-brand-600);
+    --color-fg-light-brand-dark: var(--color-brand-200);
+
+    --color-fg-light-gray-light: var(--color-gray-light-500);
+    --color-fg-light-gray-dark: var(--color-gray-dark-200);
+
+    --color-fg-light-error-light: var(--color-error-600);
+    --color-fg-light-error-dark: var(--color-error-200);
+
+    --color-fg-light-warning-light: var(--color-warning-600);
+    --color-fg-light-warning-dark: var(--color-warning-200);
+
+    --color-fg-light-success-light: var(--color-success-600);
+    --color-fg-light-success-dark: var(--color-success-200);
+
+    --color-fg-dark-brand-light: var(--color-white);
+    --color-fg-dark-brand-dark: var(--color-brand-200);
+
+    --color-fg-dark-gray-light: var(--color-white);
+    --color-fg-dark-gray-dark: var(--color-gray-dark-200);
+
+    --color-fg-dark-error-light: var(--color-white);
+    --color-fg-dark-error-dark: var(--color-error-200);
+
+    --color-fg-dark-warning-light: var(--color-white);
+    --color-fg-dark-warning-dark: var(--color-warning-200);
+
+    --color-fg-dark-success-light: var(--color-white);
+    --color-fg-dark-success-dark: var(--color-success-200);
+}

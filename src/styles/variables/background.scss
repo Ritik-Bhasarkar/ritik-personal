@@ -1,0 +1,128 @@
+:root {
+    --color-bg-primary-light: var(--color-white);
+    --color-bg-primary-dark: var(--color-gray-dark-950);
+
+    --color-bg-primary-alt-light: var(--color-white);
+    --color-bg-primary-alt-dark: var(--color-bg-secondary-dark);
+
+    --color-bg-primary-hover-light: var(--color-gray-light-50);
+    --color-bg-primary-hover-dark: var(--color-gray-dark-800);
+
+    --color-bg-primary-solid-light: var(--color-gray-light-950);
+    --color-bg-primary-solid-dark: var(--color-bg-secondary-dark);
+
+    --color-bg-secondary-light: var(--color-gray-light-50);
+    --color-bg-secondary-dark: var(--color-gray-dark-900);
+
+    --color-bg-secondary-alt-light: var(--color-gray-light-50);
+    --color-bg-secondary-alt-dark: var(--color-bg-primary-dark);
+
+    --color-bg-secondary-hover-light: var(--color-gray-light-100);
+    --color-bg-secondary-hover-dark: var(--color-gray-dark-800);
+
+    --color-bg-secondary-subtle-light: var(--color-gray-light-25);
+    --color-bg-secondary-subtle-dark: var(--color-gray-dark-900);
+
+    --color-bg-secondary-solid-light: var(--color-gray-light-600);
+    --color-bg-secondary-solid-dark: var(--color-gray-dark-600);
+
+    --color-bg-tertiary-light: var(--color-gray-light-100);
+    --color-bg-tertiary-dark: var(--color-gray-dark-800);
+
+    --color-bg-quaternary-light: var(--color-gray-light-200);
+    --color-bg-quaternary-dark: var(--color-gray-dark-700);
+
+    --color-bg-active-light: var(--color-gray-light-50);
+    --color-bg-active-dark: var(--color-gray-dark-800);
+
+    --color-bg-disabled-light: var(--color-gray-light-100);
+    --color-bg-disabled-dark: var(--color-gray-dark-800);
+
+    --color-bg-disabled-subtle-light: var(--color-gray-light-50);
+    --color-bg-disabled-subtle-dark: var(--color-gray-dark-900);
+
+    --color-bg-overlay-light: var(--color-gray-light-950);
+    --color-bg-overlay-dark: var(--color-gray-dark-800);
+
+    --color-bg-brand-primary-light: var(--color-brand-50);
+    --color-bg-brand-primary-dark: var(--color-brand-500);
+
+    --color-bg-brand-primary-alt-light: var(--color-brand-50);
+    --color-bg-brand-primary-alt-dark: var(--color-bg-secondary-dark);
+
+    --color-bg-brand-secondary-light: var(--color-brand-100);
+    --color-bg-brand-secondary-dark: var(--color-brand-600);
+
+    --color-bg-brand-solid-light: var(--color-brand-600);
+    --color-bg-brand-solid-dark: var(--color-brand-600);
+
+    --color-bg-brand-solid-hover-light: var(--color-brand-700);
+    --color-bg-brand-solid-hover-dark: var(--color-brand-500);
+
+    --color-bg-brand-section-light: var(--color-brand-800);
+    --color-bg-brand-section-dark: var(--color-bg-secondary-dark);
+
+    --color-bg-brand-section-subtle-light: var(--color-brand-700);
+    --color-bg-brand-section-subtle-dark: var(--color-bg-primary-dark);
+
+    --color-bg-error-primary-light: var(--color-error-50);
+    --color-bg-error-primary-dark: var(--color-error-500);
+
+    --color-bg-error-secondary-light: var(--color-error-100);
+    --color-bg-error-secondary-dark: var(--color-error-600);
+
+    --color-bg-error-solid-light: var(--color-error-600);
+    --color-bg-error-solid-dark: var(--color-error-600);
+
+    --color-bg-warning-primary-light: var(--color-warning-50);
+    --color-bg-warning-primary-dark: var(--color-warning-dark-50);
+
+    --color-bg-warning-secondary-light: var(--color-warning-100);
+    --color-bg-warning-secondary-dark: var(--color-warning-dark-100);
+
+    --color-bg-warning-solid-light: var(--color-warning-600);
+    --color-bg-warning-solid-dark: var(--color-warning-600);
+
+    --color-bg-success-primary-light: var(--color-success-50);
+    --color-bg-success-primary-dark: var(--color-success-500);
+
+    --color-bg-success-secondary-light: var(--color-success-100);
+    --color-bg-success-secondary-dark: var(--color-success-600);
+    --color-bg-success-secondary: var(--color-bg-success-secondary-light);
+
+    --color-bg-success-solid-light: var(--color-success-600);
+    --color-bg-success-solid-dark: var(--color-success-600);
+
+    --color-bg-pink-light: var(--color-pink-50);
+    --color-bg-pink-dark: var(--color-pink-950);
+
+    --color-bg-gray-blue-light: var(--color-gray-blue-50);
+    --color-bg-gray-blue-dark: var(--color-gray-blue-900);
+
+    --color-bg-blue-light-light: var(--color-blue-light-50);
+    --color-bg-blue-light-dark: var(--color-blue-light-950);
+
+    --color-bg-blue-light: var(--color-blue-50);
+    --color-bg-blue-dark: var(--color-blue-950);
+
+    --color-bg-indigo-light: var(--color-indigo-50);
+    --color-bg-indigo-dark: var(--color-indigo-950);
+
+    --color-bg-purple-light: var(--color-purple-50);
+    --color-bg-purple-dark: var(--color-purple-950);
+
+    --color-bg-surface-light: var(--color-gray-light-100);
+    --color-bg-surface-dark: var(--color-gray-dark-950);
+
+    --color-bg-surface-raised-light: var(--color-gray-light-50);
+    --color-bg-surface-raised-dark: var(--color-gray-dark-950);
+
+    --color-bg-surface-card-light: var(--color-white);
+    --color-bg-surface-card-dark: var(--color-gray-dark-900);
+
+    --color-bg-surface-card-deep-light: var(--color-gray-light-200);
+    --color-bg-surface-card-deep-dark: var(--color-gray-dark-900);
+
+    --color-bg-surface-float-light: var(--color-white);
+    --color-bg-surface-float-dark: var(--color-gray-dark-900);
+}

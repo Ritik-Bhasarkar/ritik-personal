@@ -1,0 +1,80 @@
+:root {
+    --button-primary-fg-light: var(--color-white);
+    --button-primary-fg-hover-light: var(--color-white);
+    --button-primary-bg-light: var(--color-brand-600);
+    --button-primary-bg-hover-light: var(--color-brand-700);
+    --button-primary-border-light: var(--color-brand-600);
+    --button-primary-border-hover-light: var(--color-brand-700);
+
+    --button-primary-fg-dark: var(--color-white);
+    --button-primary-fg-hover-dark: var(--color-white);
+    --button-primary-bg-dark: var(--color-brand-600);
+    --button-primary-bg-hover-dark: var(--color-brand-700);
+    --button-primary-border-dark: var(--color-brand-600);
+    --button-primary-border-hover-dark: var(--color-brand-700);
+
+    --button-secondary-fg-light: var(--color-gray-light-700);
+    --button-secondary-fg-hover-light: var(--color-gray-light-800);
+    --button-secondary-bg-light: var(--color-white);
+    --button-secondary-bg-hover-light: var(--color-gray-light-50);
+    --button-secondary-border-light: var(--color-gray-light-300);
+    --button-secondary-border-hover-light: var(--color-gray-light-300);
+
+    --button-secondary-fg-dark: var(--color-gray-dark-300);
+    --button-secondary-fg-hover-dark: var(--color-gray-dark-100);
+    --button-secondary-bg-dark: var(--color-gray-dark-900);
+    --button-secondary-bg-hover-dark: var(--color-gray-dark-800);
+    --button-secondary-border-dark: var(--color-gray-dark-700);
+    --button-secondary-border-hover-dark: var(--color-gray-dark-700);
+
+    --button-secondary-color-fg-light: var(--color-brand-700);
+    --button-secondary-color-fg-hover-light: var(--color-brand-800);
+    --button-secondary-color-bg-light: var(--color-white);
+    --button-secondary-color-bg-hover-light: var(--color-brand-50);
+    --button-secondary-color-border-light: var(--color-brand-300);
+    --button-secondary-color-border-hover-light: var(--color-brand-300);
+
+    --button-secondary-color-fg-dark: var(--color-gray-dark-300);
+    --button-secondary-color-fg-hover-dark: var(--color-gray-dark-100);
+    --button-secondary-color-bg-dark: var(--color-gray-dark-900);
+    --button-secondary-color-bg-hover-dark: var(--color-gray-dark-800);
+    --button-secondary-color-border-dark: var(--color-gray-dark-700);
+    --button-secondary-color-border-hover-dark: var(--color-gray-dark-700);
+
+    --button-tertiary-gray-fg-light: var(--color-gray-light-600);
+    --button-tertiary-gray-fg-hover-light: var(--color-gray-light-700);
+    --button-tertiary-gray-bg-hover-light: var(--color-gray-light-50);
+
+    --button-tertiary-gray-fg-dark: var(--color-gray-dark-400);
+    --button-tertiary-gray-fg-hover-dark: var(--color-gray-dark-200);
+    --button-tertiary-gray-bg-hover-dark: var(--color-gray-dark-800);
+
+    --button-tertiary-color-fg-light: var(--color-brand-700);
+    --button-tertiary-color-fg-hover-light: var(--color-brand-800);
+    --button-tertiary-color-bg-hover-light: var(--color-brand-50);
+
+    --button-tertiary-color-fg-dark: var(--color-gray-dark-300);
+    --button-tertiary-color-fg-hover-dark: var(--color-gray-dark-100);
+    --button-tertiary-color-bg-hover-dark: var(--color-gray-dark-800);
+
+    --button-link-gray-fg-light: var(--button-tertiary-gray-fg-light);
+    --button-link-gray-fg-hover-light: var(--button-tertiary-gray-fg-hover-light);
+
+    --button-link-gray-fg-dark: var(--button-tertiary-gray-fg-dark);
+    --button-link-gray-fg-hover-dark: var(--button-tertiary-gray-fg-hover-dark);
+
+    --button-link-color-fg-light: var(--color-brand-600);
+    --button-link-color-fg-hover-light: var(--color-brand-700);
+
+    --button-link-color-fg-dark: var(--color-gray-dark-300);
+    --button-link-color-fg-hover-dark: var(--color-white);
+
+    --button-fg-disabled-light: var(--color-fg-disabled-light);
+    --button-fg-disabled-dark: var(--color-fg-disabled-dark);
+
+    --button-border-disabled-light: var(--color-border-disabled-subtle-light);
+    --button-border-disabled-dark: var(--color-border-disabled-subtle-dark);
+
+    --button-bg-disabled-light: var(--color-bg-disabled-light);
+    --button-bg-disabled-dark: var(--color-bg-disabled-dark);
+}
