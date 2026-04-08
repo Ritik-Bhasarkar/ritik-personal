@@ -1,0 +1,35 @@
+@mixin ring-brand(){
+    filter:drop-shadow( 0 0 0 4px #779FED3D);
+}
+
+@mixin ring-brand-shadow-xs(){
+    filter: drop-shadow(0 1px 2px #1018280D) drop-shadow(0 0 4px #7791ED3D);
+}
+
+@mixin ring-brand-shadow-sm(){
+    filter:drop-shadow( 0 1px 3px 0 #1018281A) drop-shadow(0 1px 2px 0 #1018280F) drop-shadow(0 0 0 4px #7798ED3D);
+}
+
+@mixin ring-gray(){
+    filter:drop-shadow( 0 0 0 4px #98A2B324);
+}
+
+@mixin ring-gray-shadow-xs(){
+    filter:drop-shadow( 0 1px 2px 0 #1018280D) drop-shadow( 0 0 0 4px #98A2B324);
+}
+
+@mixin ring-gray-shadow-sm(){
+    filter:drop-shadow( 0 1px 3px 0 #1018281A) drop-shadow( 1px 2px 0 #1018280F) drop-shadow(0 0 0 4px #98A2B324);
+}
+
+@mixin ring-gray-secondary(){
+    filter:drop-shadow( 0 0 0 4px #98A2B333);
+}
+
+@mixin ring-error(){
+    filter:drop-shadow( 0 0 0 4px #F044383D);
+}
+
+@mixin ring-error-shadow-xs(){
+    filter:drop-shadow( 0 1px 2px 0 #1018280D) drop-shadow(0 0 4px #F044383D);
+}

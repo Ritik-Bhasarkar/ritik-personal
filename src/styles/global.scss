@@ -1,0 +1,37 @@
+@use './variables/spacing';
+@use './variables/radius';
+@use './variables/width';
+@use './variables/container';
+@use './mixins/theme-light' as *;
+@use './mixins/theme-dark' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+html.theme-light {
+    @include theme-light;
+}
+
+html.theme-dark {
+    @include theme-dark;
+}

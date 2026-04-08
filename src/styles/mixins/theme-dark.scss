@@ -1,0 +1,10 @@
+@mixin theme-dark {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --color-bg: #0c0e12;
+    --color-bg-secondary: #161b26;
+    --color-text: #f5f5f6;
+    --color-text-secondary: #94969c;
+    --color-border: #333741;
+}

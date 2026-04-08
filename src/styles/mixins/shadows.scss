@@ -1,0 +1,49 @@
+@mixin shadow-xs() {
+    filter: drop-shadow( 0 1px 2px 0 #6398E9FF);
+}
+
+@mixin shadow-sm() {
+    filter: drop-shadow( 0 1px 3px 0 #1018281A) drop-shadow( 1px 2px 0 #1018280F);
+}
+
+@mixin shadow-md() {
+    filter: drop-shadow( 0 4px 8px -2px #1018281A) drop-shadow( 0 2px 4px -2px #1018280F);
+}
+
+@mixin shadow-lg() {
+    filter: drop-shadow( 0 12px 16px -4px #10182814) drop-shadow( 0 4px 6px -2px #10182808);
+}
+
+@mixin shadow-xl() {
+    filter: drop-shadow( 0 20px 24px -4px #10182814) drop-shadow( 0 8px 8px -4px #10182808);
+}
+
+@mixin shadow-2xl() {
+    filter: drop-shadow( 0 24px 48px -12px #1018282E);
+}
+
+@mixin shadow-3xl() {
+    filter: drop-shadow( 0 32px 64px -12px #10182824);
+}
+
+
+@mixin shadow-main-centre-md() {
+    filter: drop-shadow( 0 75px 150px 0 #34405424);
+}
+
+
+@mixin shadow-main-centre-lg() {
+    filter: drop-shadow( 0 100px 200px 0 #3440542E);
+}
+
+@mixin shadow-overlay-right-lg() {
+    filter: drop-shadow( -40px 40px 72px 0 #3440541F);
+}
+
+@mixin shadow-overlay-left-lg() {
+    filter: drop-shadow( 100px 100px 150px 0 #3440541F);
+}
+
+@mixin shadow-grid-md() {
+    filter: drop-shadow( 32px 32px 64px 0 #34405414);
+}

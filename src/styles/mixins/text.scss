@@ -1,0 +1,319 @@
+@mixin text-xl-regular(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@mixin text-xl-medium(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+@mixin text-xl-semibold(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+@mixin text-xl-bold(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@mixin text-xl-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@mixin text-xl-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+@mixin text-xl-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+@mixin text-xl-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@mixin text-xl-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+
+@mixin text-lg-regular(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@mixin text-lg-bold(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@mixin text-lg-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@mixin text-lg-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@mixin text-lg-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+
+@mixin text-md-regular(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin text-md-bold(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@mixin text-md-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin text-md-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@mixin text-md-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+
+@mixin text-sm-regular(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin text-sm-medium(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@mixin text-sm-semibold(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+@mixin text-sm-bold(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+@mixin text-sm-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin text-sm-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@mixin text-sm-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+
+@mixin text-xs-regular(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+@mixin text-xs-medium(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+@mixin text-xs-semibold(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+@mixin text-xs-bold(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+}

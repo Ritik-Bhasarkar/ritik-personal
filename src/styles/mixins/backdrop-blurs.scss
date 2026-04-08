@@ -1,0 +1,15 @@
+@mixin backdrop-blur-sm(){
+    backdrop-filter: blur(8px);
+}
+
+@mixin backdrop-blur-md(){
+    backdrop-filter: blur(16px);
+}
+
+@mixin backdrop-blur-lg(){
+    backdrop-filter: blur(24px);
+}
+
+@mixin backdrop-blur-xl(){
+    backdrop-filter: blur(40px);
+}

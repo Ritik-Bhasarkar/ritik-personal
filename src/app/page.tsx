@@ -1,66 +1,42 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from '@/components/navbar/navbar';
+import './page.scss';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <>
+            <Navbar />
+            <main className="home">
+                <div className="home--content">
+                    <h1 className="home--title">Theme Toggle</h1>
+                    <p className="home--subtitle">
+                        Use the switch in the navbar to toggle between light and dark mode.
+                        The theme is persisted to localStorage.
+                    </p>
+                    <div className="home--cards">
+                        <div className="home--card">
+                            <h2 className="home--card--title">Background</h2>
+                            <p className="home--card--text">
+                                Surface uses <code>--color-bg</code> switching between{' '}
+                                <code>#ffffff</code> and <code>#0c0e12</code>.
+                            </p>
+                        </div>
+                        <div className="home--card">
+                            <h2 className="home--card--title">Secondary Surface</h2>
+                            <p className="home--card--text">
+                                Cards use <code>--color-bg-secondary</code> switching between{' '}
+                                <code>#f9fafb</code> and <code>#161b26</code>.
+                            </p>
+                        </div>
+                        <div className="home--card">
+                            <h2 className="home--card--title">Border</h2>
+                            <p className="home--card--text">
+                                Borders use <code>--color-border</code> switching between{' '}
+                                <code>#d0d5dd</code> and <code>#333741</code>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </>
+    );
 }

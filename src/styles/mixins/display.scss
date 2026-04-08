@@ -1,0 +1,200 @@
+@mixin display-2xl-regular(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-medium(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-semibold(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-bold(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+
+@mixin display-xl-regular(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-medium(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-semibold(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-bold(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-lg-regular(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-medium(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-semibold(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-bold(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-md-regular(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-medium(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-semibold(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-bold(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-sm-regular(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+@mixin display-sm-medium(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+}
+
+@mixin display-sm-semibold(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+@mixin display-sm-bold(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+@mixin display-sm-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+@mixin display-xs-regular(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@mixin display-xs-medium(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+@mixin display-xs-semibold(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+@mixin display-xs-bold(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+@mixin display-xs-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+}

@@ -1,0 +1,555 @@
+// display mixins
+@mixin display-2xl-regular(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-medium(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-semibold(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-2xl-bold(){
+    font-family: Inter;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 90px;
+    letter-spacing: -1.44px;
+}
+
+@mixin display-xl-regular(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-medium(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-semibold(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-xl-bold(){
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+}
+
+@mixin display-lg-regular(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-medium(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-semibold(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-lg-bold(){
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+}
+
+@mixin display-md-regular(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-medium(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-semibold(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-md-bold(){
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+}
+
+@mixin display-sm-regular(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+@mixin display-sm-medium(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+}
+
+@mixin display-sm-semibold(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+@mixin display-sm-bold(){
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+@mixin display-sm-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+@mixin display-xs-regular(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@mixin display-xs-medium(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+@mixin display-xs-semibold(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+@mixin display-xs-bold(){
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+@mixin display-xs-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+// text mixins
+@mixin text-xl-regular(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@mixin text-xl-medium(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+@mixin text-xl-semibold(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+@mixin text-xl-bold(){
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@mixin text-xl-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@mixin text-xl-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+@mixin text-xl-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+@mixin text-xl-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@mixin text-xl-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@mixin text-lg-regular(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@mixin text-lg-bold(){
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@mixin text-lg-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@mixin text-lg-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@mixin text-lg-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin text-lg-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+@mixin text-lg-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@mixin text-md-regular(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin text-md-bold(){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@mixin text-md-regular-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin text-md-bold-italic(){
+    font-family: Inter;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@mixin text-md-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@mixin text-md-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+@mixin text-md-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin text-sm-regular(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin text-sm-medium(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@mixin text-sm-semibold(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+@mixin text-sm-bold(){
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+@mixin text-sm-regular-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin text-sm-medium-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@mixin text-sm-semibold-underlined(){
+    font-family: Inter;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+@mixin text-xs-regular(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+@mixin text-xs-medium(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+@mixin text-xs-semibold(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+@mixin text-xs-bold(){
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+// backdrop-blur mixins
+@mixin backdrop-blur-sm(){
+    backdrop-filter: blur(8px);
+}
+
+@mixin backdrop-blur-md(){
+    backdrop-filter: blur(16px);
+}
+
+@mixin backdrop-blur-lg(){
+    backdrop-filter: blur(24px);
+}
+
+@mixin backdrop-blur-xl(){
+    backdrop-filter: blur(40px);
+}
+
+// theme mixins
+@mixin theme-light {
+    color-scheme: light;
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f9fafb;
+    --color-text: #101828;
+    --color-text-secondary: #475467;
+    --color-border: #d0d5dd;
+}
+
+@mixin theme-dark {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --color-bg: #0c0e12;
+    --color-bg-secondary: #161b26;
+    --color-text: #f5f5f6;
+    --color-text-secondary: #94969c;
+    --color-border: #333741;
+}

@@ -1,0 +1,8 @@
+@mixin theme-light {
+    color-scheme: light;
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f9fafb;
+    --color-text: #101828;
+    --color-text-secondary: #475467;
+    --color-border: #d0d5dd;
+}

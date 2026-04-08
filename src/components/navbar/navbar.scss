@@ -1,0 +1,85 @@
+@use "@/mixins.scss" as *;
+
+.navbar {
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+    &--container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-8);
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &--logo {
+        @include display-xs-semibold;
+        color: var(--color-text);
+        transition: color 0.2s ease;
+    }
+
+    &--toggle {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-2);
+        cursor: pointer;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        &--track {
+            width: 44px;
+            height: 24px;
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+            position: relative;
+            transition: background 0.2s ease;
+            flex-shrink: 0;
+
+            &--on {
+                background: #7f56d9;
+            }
+        }
+
+        &--thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background 0.2s ease;
+
+            .navbar--toggle--track--on & {
+                transform: translateX(20px);
+            }
+        }
+
+        &--label {
+            @include text-sm-medium;
+            color: var(--color-text-secondary);
+            transition: color 0.2s ease;
+            min-width: 32px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        &--container {
+            padding: 0 var(--spacing-4);
+        }
+    }
+}
