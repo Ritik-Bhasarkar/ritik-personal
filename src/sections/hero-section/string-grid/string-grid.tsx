@@ -168,10 +168,12 @@ export default function StringGrid() {
             m.x = g.x; m.y = g.y;
         };
         const onUp = () => { m.down = false; };
+        const onLeave = () => { m.px = m.x; m.py = m.y; };
 
         window.addEventListener('mousedown', onDown);
         window.addEventListener('mousemove', onMove);
         window.addEventListener('mouseup', onUp);
+        document.addEventListener('mouseleave', onLeave);
 
         const applyMouse = () => {
             const dx = m.x - m.px;
@@ -235,6 +237,7 @@ export default function StringGrid() {
             window.removeEventListener('mousedown', onDown);
             window.removeEventListener('mousemove', onMove);
             window.removeEventListener('mouseup', onUp);
+            document.removeEventListener('mouseleave', onLeave);
             window.removeEventListener('touchstart', onTouchStart);
             window.removeEventListener('touchmove', onTouchMove);
             window.removeEventListener('touchend', onTouchEnd);
