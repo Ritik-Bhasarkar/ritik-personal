@@ -1,0 +1,82 @@
+@use "@/mixins.scss" as *;
+
+.hero-annotations {
+    &--note {
+        position: absolute;
+        font-family: var(--font-hand), cursive;
+        font-size: 22px;
+        line-height: 1.1;
+        color: var(--hero-accent);
+        white-space: nowrap;
+        z-index: 4;
+        pointer-events: none;
+
+        small {
+            display: block;
+            font-family: var(--font-mono), ui-monospace, monospace;
+            font-size: 9px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--hero-accent);
+            opacity: 0.75;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        svg {
+            position: absolute;
+            overflow: visible;
+            pointer-events: none;
+
+            path {
+                fill: none;
+                stroke: var(--hero-accent);
+                stroke-width: 1.4;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+        }
+    }
+
+    &--arrow-head {
+        fill: var(--hero-accent) !important;
+        stroke: none !important;
+    }
+
+    &--note-music {
+        top: 120px;
+        left: 50%;
+        transform: translateX(calc(-50% - 260px));
+        text-align: right;
+
+        svg {
+            width: 200px;
+            height: 70px;
+            top: -48px;
+            right: -30px;
+        }
+    }
+
+    &--note-bio {
+        bottom: 220px;
+        right: 56px;
+        text-align: left;
+        max-width: 220px;
+        white-space: normal;
+
+        svg {
+            width: 200px;
+            height: 80px;
+            left: -210px;
+            top: 10px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-annotations {
+        &--note {
+            display: none;
+        }
+    }
+}

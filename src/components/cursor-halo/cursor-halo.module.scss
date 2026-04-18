@@ -1,0 +1,20 @@
+@use "@/mixins.scss" as *;
+
+.cursor-halo {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(
+        closest-side,
+        rgba(17, 17, 17, 0.08),
+        rgba(17, 17, 17, 0)
+    );
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    mix-blend-mode: multiply;
+    transition: opacity 0.3s;
+}

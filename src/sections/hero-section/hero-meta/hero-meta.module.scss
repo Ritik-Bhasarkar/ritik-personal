@@ -1,0 +1,35 @@
+@use "@/mixins.scss" as *;
+
+.hero-meta {
+    position: absolute;
+    top: 110px;
+    right: 36px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--hero-muted);
+    text-align: right;
+    line-height: 1.8;
+    z-index: 2;
+
+    &--row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        justify-content: flex-end;
+    }
+
+    &--clock {
+        color: var(--hero-ink);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-meta {
+        top: 160px;
+        right: 20px;
+        font-size: 9px;
+    }
+}
