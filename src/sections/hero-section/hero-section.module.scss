@@ -8,8 +8,5 @@
     color: var(--hero-ink);
     font-family: var(--font-mono), ui-monospace, monospace;
     -webkit-font-smoothing: antialiased;
-    background-image:
-        linear-gradient(to right, var(--hero-grid) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--hero-grid) 1px, transparent 1px);
-    background-size: calc(100% / 12) 32px, 32px 32px;
+    user-select: none;
 }
