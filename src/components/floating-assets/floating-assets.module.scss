@@ -1,0 +1,120 @@
+@use "@/mixins.scss" as *;
+
+.floating-assets {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	overflow: hidden;
+
+	&--item {
+		position: absolute;
+		left: var(--x);
+		top: var(--y);
+		padding: 0;
+		border: none;
+		background: none;
+		cursor: grab;
+		touch-action: none;
+		transform: translate(-50%, -50%) rotate(var(--rot)) scale(var(--scale));
+
+		&:active {
+			cursor: grabbing;
+		}
+		transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			left 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: top, left, transform;
+
+		&:hover {
+			transform: translate(-50%, -50%) rotate(calc(var(--rot) + 5deg))
+				scale(calc(var(--scale) * 1.06));
+		}
+
+		&:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 4px;
+		}
+	}
+
+	&[data-mode="cleaned"] &--item {
+		transform: translate(-50%, -50%) rotate(0deg) scale(var(--scale));
+
+		&:hover {
+			transform: translate(-50%, -50%) rotate(0deg)
+				scale(calc(var(--scale) * 1.06));
+		}
+	}
+
+	&--img {
+		display: block;
+		width: var(--w);
+		height: auto;
+		user-select: none;
+		-webkit-user-drag: none;
+		pointer-events: none;
+	}
+
+	&--modes {
+		position: absolute;
+		left: 50%;
+		top: 74.8%;
+		z-index: 200;
+		display: flex;
+		gap: var(--spacing-sm, 8px);
+		transform: translate(-50%, -50%);
+	}
+
+	&--mode {
+		display: grid;
+		place-items: center;
+		width: 34px;
+		height: 34px;
+		padding: 0;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.7);
+		color: rgba(0, 0, 0, 0.55);
+		cursor: pointer;
+		backdrop-filter: blur(6px);
+		transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.2;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		&:hover {
+			color: rgba(0, 0, 0, 0.8);
+			border-color: rgba(0, 0, 0, 0.25);
+		}
+
+		&-active {
+			color: #fff;
+			border-color: rgba(0, 0, 0, 0.85);
+			background: rgba(0, 0, 0, 0.85);
+		}
+	}
+
+	&--capture {
+		position: absolute;
+		top: var(--spacing-lg, 16px);
+		right: var(--spacing-lg, 16px);
+		z-index: 200;
+		padding: 8px 14px;
+		border: 1px solid rgba(0, 0, 0, 0.85);
+		border-radius: 8px;
+		background: rgba(0, 0, 0, 0.85);
+		color: #fff;
+		font-size: 12px;
+		cursor: pointer;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.7);
+		}
+	}
+}
