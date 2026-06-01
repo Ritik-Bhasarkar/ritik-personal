@@ -34,7 +34,12 @@ export default function About() {
 					rel="noopener noreferrer"
 					aria-label="GitHub"
 				>
-					<img src="/floating-assets/svgs/github-glyph.svg" alt="GitHub" />
+					<img
+						src="/floating-assets/svgs/github-glyph.svg"
+						alt="GitHub"
+						loading="lazy"
+						decoding="async"
+					/>
 				</a>
 				<a
 					href="https://www.linkedin.com/in/ritikbhasarkar"
@@ -42,7 +47,12 @@ export default function About() {
 					rel="noopener noreferrer"
 					aria-label="LinkedIn"
 				>
-					<img src="/floating-assets/svgs/linkedin.svg" alt="LinkedIn" />
+					<img
+						src="/floating-assets/svgs/linkedin.svg"
+						alt="LinkedIn"
+						loading="lazy"
+						decoding="async"
+					/>
 				</a>
 				<a
 					href="https://x.com/ritikbhasarkar"
@@ -50,10 +60,20 @@ export default function About() {
 					rel="noopener noreferrer"
 					aria-label="X"
 				>
-					<img src="/floating-assets/svgs/x.svg" alt="X" />
+					<img
+						src="/floating-assets/svgs/x.svg"
+						alt="X"
+						loading="lazy"
+						decoding="async"
+					/>
 				</a>
 				<a href="mailto:ritik@example.com" aria-label="Email">
-					<img src="/floating-assets/svgs/mail.svg" alt="Email" />
+					<img
+						src="/floating-assets/svgs/mail.svg"
+						alt="Email"
+						loading="lazy"
+						decoding="async"
+					/>
 				</a>
 			</div>
 		</div>

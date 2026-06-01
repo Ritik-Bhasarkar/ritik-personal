@@ -8,6 +8,7 @@ import {
 	floatingAssets,
 	type AssetMode,
 } from '@/lib/assets/floating-assets';
+import { playSound } from '@/lib/sound';
 import styles from './floating-assets.module.scss';
 
 // Flip to false (or delete the button block) once default positions are captured.
@@ -62,7 +63,6 @@ export default function FloatingAssets() {
 	>({});
 	const [draggingId, setDraggingId] = useState<string | null>(null);
 
-	const audioRef = useRef<HTMLAudioElement | null>(null);
 	const stageRef = useRef<HTMLDivElement | null>(null);
 	const dragRef = useRef<{
 		id: string;
@@ -78,13 +78,6 @@ export default function FloatingAssets() {
 	useEffect(() => {
 		stageRef.current?.parentElement?.setAttribute('data-mode', mode);
 	}, [mode]);
-
-	const playSound = (sound: string) => {
-		audioRef.current?.pause();
-		const audio = new Audio(sound);
-		audioRef.current = audio;
-		void audio.play().catch(() => {});
-	};
 
 	const startDrag = (
 		e: React.PointerEvent<HTMLButtonElement>,
@@ -187,6 +180,8 @@ export default function FloatingAssets() {
 							src={asset.image}
 							alt={asset.label}
 							draggable={false}
+							loading="lazy"
+							decoding="async"
 						/>
 						{asset.id === 'folder' && (
 							<span className={styles['floating-assets--popover']} aria-hidden="true">
@@ -197,6 +192,8 @@ export default function FloatingAssets() {
 										src={`/floating-assets/svgs/${name}.svg`}
 										alt=""
 										draggable={false}
+										loading="lazy"
+										decoding="async"
 									/>
 								))}
 							</span>

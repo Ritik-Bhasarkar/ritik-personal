@@ -2,11 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { heroSvgs } from '@/lib/assets/hero-svgs';
+import { playSound } from '@/lib/sound';
 import styles from './hero-svgs.module.scss';
 
 // Flip to false (or delete the button block) once positions are captured.
-// Also turns off dragging / pointer-events so the icons are inert in production.
 const SHOW_CAPTURE_BUTTON = true;
+
+const SOUNDS = '/floating-assets/sound-effects';
+const HOVER_SOUND = `${SOUNDS}/mouse-click.mp3`;
+const DRAG_SOUND = `${SOUNDS}/AirDrop.wav`;
 
 type Endpoint = 'hero' | 'about';
 
@@ -106,6 +110,7 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
             originY: origin.y,
         };
         e.currentTarget.setPointerCapture(e.pointerId);
+        playSound(DRAG_SOUND, 0.4);
     };
 
     const onDrag = (e: React.PointerEvent<HTMLImageElement>) => {
@@ -156,6 +161,9 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
                         src={svg.src}
                         alt={svg.label}
                         draggable={false}
+                        loading="lazy"
+                        decoding="async"
+                        onMouseEnter={() => playSound(HOVER_SOUND, 0.35)}
                         onPointerDown={
                             interactive ? e => startDrag(e, svg.id, heroPos, aboutPos) : undefined
                         }
@@ -168,7 +176,7 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
                             width: `${svg.width}px`,
                             opacity,
                             transform: 'translate(-50%, -50%)',
-                            pointerEvents: interactive ? 'auto' : 'none',
+                            pointerEvents: 'auto',
                         }}
                     />
                 );
