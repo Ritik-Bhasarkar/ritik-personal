@@ -83,6 +83,32 @@ export default function StringGrid() {
 
         scene.add(new THREE.LineSegments(geo, mat));
 
+        // --- Plus (+) mark at every grid intersection ---
+        const MARK = 5; // half-length of each plus arm (px)
+        const markArr = new Float32Array(pts.length * 4 * 3);
+        const markGeo = new THREE.BufferGeometry();
+        const markAttr = new THREE.BufferAttribute(markArr, 3);
+        markAttr.setUsage(THREE.DynamicDrawUsage);
+        markGeo.setAttribute('position', markAttr);
+        const markMat = new THREE.LineBasicMaterial({
+            color: 0x4b4b4b,
+            transparent: true,
+            opacity: 0.55,
+        });
+        scene.add(new THREE.LineSegments(markGeo, markMat));
+
+        const syncMarks = () => {
+            let v = 0;
+            for (let i = 0; i < pts.length; i++) {
+                const p = pts[i];
+                markArr[v * 3] = p.x - MARK; markArr[v * 3 + 1] = p.y; markArr[v * 3 + 2] = 0; v++;
+                markArr[v * 3] = p.x + MARK; markArr[v * 3 + 1] = p.y; markArr[v * 3 + 2] = 0; v++;
+                markArr[v * 3] = p.x; markArr[v * 3 + 1] = p.y - MARK; markArr[v * 3 + 2] = 0; v++;
+                markArr[v * 3] = p.x; markArr[v * 3 + 1] = p.y + MARK; markArr[v * 3 + 2] = 0; v++;
+            }
+            markAttr.needsUpdate = true;
+        };
+
         const writeVert = (base: number, p: Pt) => {
             arr[base] = p.x;
             arr[base + 1] = p.y;
@@ -217,8 +243,11 @@ export default function StringGrid() {
             applyMouse();
             for (let s = 0; s < SUBSTEPS; s++) step(DT / SUBSTEPS);
             syncGeo();
+            syncMarks();
             mat.color.set(isDark() ? 0xc8c8c8 : 0x4b4b4b);
             mat.opacity = isDark() ? 0.1 : 0.38;
+            markMat.color.set(isDark() ? 0xc8c8c8 : 0x4b4b4b);
+            markMat.opacity = isDark() ? 0.22 : 0.55;
             renderer.render(scene, camera);
         };
         tick();
@@ -246,6 +275,8 @@ export default function StringGrid() {
             window.removeEventListener('resize', onResize);
             geo.dispose();
             mat.dispose();
+            markGeo.dispose();
+            markMat.dispose();
             renderer.dispose();
             if (container.contains(renderer.domElement)) {
                 container.removeChild(renderer.domElement);

@@ -33,24 +33,30 @@ export default function HeroAnnotations() {
                 duration: 250,
                 ease: 'outQuad',
             });
-            animate(small, {
-                opacity: [0, 0.75],
-                delay: wordsEnd + 100,
-                duration: 300,
-                ease: 'outQuad',
-            });
-            animate(path, {
-                strokeDashoffset: [1, 0],
-                delay: wordsEnd + 300,
-                duration: 650,
-                ease: 'outCubic',
-            });
-            animate(head, {
-                opacity: [0, 1],
-                delay: wordsEnd + 950,
-                duration: 200,
-                ease: 'outQuad',
-            });
+            if (small) {
+                animate(small, {
+                    opacity: [0, 0.75],
+                    delay: wordsEnd + 100,
+                    duration: 300,
+                    ease: 'outQuad',
+                });
+            }
+            if (path) {
+                animate(path, {
+                    strokeDashoffset: [1, 0],
+                    delay: wordsEnd + 300,
+                    duration: 650,
+                    ease: 'outCubic',
+                });
+            }
+            if (head) {
+                animate(head, {
+                    opacity: [0, 1],
+                    delay: wordsEnd + 950,
+                    duration: 200,
+                    ease: 'outQuad',
+                });
+            }
         };
 
         if (musicRef.current) run(musicRef.current, MUSIC_WORDS.length);
