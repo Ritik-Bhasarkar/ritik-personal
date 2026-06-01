@@ -1,0 +1,131 @@
+@use "@/mixins.scss" as *;
+
+.about {
+	position: relative;
+	overflow: hidden;
+	background-color: rgb(255, 250, 245);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&--content {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+        gap: var(--spacing-3xl);
+        pointer-events: auto;
+        z-index: 10;
+        transform: translateX(var(--shift, 0));
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+		&--top {
+			display: flex;
+			gap: var(--spacing-md);
+            flex-direction: column;
+
+            &--heading {
+                font-family: "Historia Sky Script", var(--font-display);
+                font-size: 85px;
+                font-weight: 600;
+                line-height: 1;
+                color: rgb(62, 62, 66);
+                transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+                &:hover {
+                    transform: scale(1.08);
+                }
+            }
+
+            &--description{
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-xs);
+
+                &--text,
+                &--subtext {
+                    font-family: var(--font-mono), monospace;
+                    font-size: 13px;
+                    font-weight: 400;
+                    letter-spacing: 0.02em;
+                    color: rgb(71, 68, 63);
+                    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+                    &:hover {
+                        transform: scale(1.08);
+                    }
+                }
+
+                &--subtext {
+                    font-style: italic;
+                    opacity: 0.75;
+                }
+            }
+		}
+
+        &--bottom{
+            max-width: var(--width-sm);
+
+            span {
+                display: inline-block;
+                font-family: var(--font-mono), monospace;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 1.7;
+                letter-spacing: 0.02em;
+                color: rgb(71, 68, 63);
+                transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+	}
+
+	&[data-mode="cleaned"] &--content {
+		--shift: 22vw;
+		text-align: right;
+		align-items: flex-end;
+	}
+
+	&--socials {
+		position: absolute;
+		right: var(--spacing-4xl);
+		bottom: var(--spacing-4xl);
+		z-index: 60;
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xl);
+		color: rgb(71, 68, 63);
+		pointer-events: auto;
+		transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+		a {
+			display: inline-flex;
+			transition: transform 0.2s ease;
+
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+
+		img {
+			display: block;
+			width: 40px;
+			height: 40px;
+			object-fit: contain;
+		}
+	}
+
+	&[data-mode="notebook"] &--socials {
+		transform: translate(
+			calc(50% - 50vw + var(--spacing-4xl)),
+			calc(50% - 50vh + var(--spacing-4xl))
+		);
+		opacity: 0;
+		pointer-events: none;
+	}
+}

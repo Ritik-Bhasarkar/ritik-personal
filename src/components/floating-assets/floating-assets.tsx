@@ -52,6 +52,9 @@ interface Point {
 
 const round1 = (n: number): number => Math.round(n * 10) / 10;
 
+// Icons that spill out of the folder on hover.
+const FOLDER_ICONS = ['notion', 'figma', 'bun'];
+
 export default function FloatingAssets() {
 	const [mode, setMode] = useState<AssetMode>(DEFAULT_ASSET_MODE);
 	const [overrides, setOverrides] = useState<
@@ -185,6 +188,19 @@ export default function FloatingAssets() {
 							alt={asset.label}
 							draggable={false}
 						/>
+						{asset.id === 'folder' && (
+							<span className={styles['floating-assets--popover']} aria-hidden="true">
+								{FOLDER_ICONS.map(name => (
+									<img
+										key={name}
+										className={styles['floating-assets--popover-icon']}
+										src={`/floating-assets/svgs/${name}.svg`}
+										alt=""
+										draggable={false}
+									/>
+								))}
+							</span>
+						)}
 					</button>
 				);
 			})}

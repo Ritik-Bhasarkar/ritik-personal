@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ThemeToggle from '@/components/theme-toggle/theme-toggle';
+import GridToggle from '@/components/grid-toggle/grid-toggle';
 import styles from './hero-meta.module.scss';
 
 function getIST(): string {
@@ -31,7 +31,7 @@ export default function HeroMeta() {
                     <br />
                     Pune, IN · IST <b className={styles['hero-meta--clock']}>{clock}</b>
                 </span>
-                <ThemeToggle />
+                <GridToggle />
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/bun.svg`,
     width: 60,
     positions: {
-      chaos: { x: 8, y: 18 },
+      chaos: { x: 12.6, y: 24.3 },
       cleaned: { x: 18, y: 28 },
       notebook: { x: 8, y: 18 },
     },
@@ -35,7 +35,7 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/claude.svg`,
     width: 60,
     positions: {
-      chaos: { x: 90, y: 20 },
+      chaos: { x: 92.2, y: 25.1 },
       cleaned: { x: 34, y: 28 },
       notebook: { x: 90, y: 20 },
     },
@@ -46,20 +46,9 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/comment-cursor.svg`,
     width: 60,
     positions: {
-      chaos: { x: 50, y: 12 },
+      chaos: { x: 63.2, y: 18.4 },
       cleaned: { x: 50, y: 28 },
       notebook: { x: 50, y: 12 },
-    },
-  },
-  {
-    id: "facetime",
-    label: "FaceTime",
-    src: `${SVGS}/facetime.svg`,
-    width: 60,
-    positions: {
-      chaos: { x: 15, y: 80 },
-      cleaned: { x: 66, y: 28 },
-      notebook: { x: 15, y: 80 },
     },
   },
   {
@@ -68,20 +57,9 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/figma.svg`,
     width: 60,
     positions: {
-      chaos: { x: 85, y: 78 },
+      chaos: { x: 83.2, y: 85.9 },
       cleaned: { x: 82, y: 28 },
       notebook: { x: 85, y: 78 },
-    },
-  },
-  {
-    id: "github-glyph",
-    label: "GitHub glyph",
-    src: `${SVGS}/github-glyph.svg`,
-    width: 60,
-    positions: {
-      chaos: { x: 30, y: 30 },
-      cleaned: { x: 18, y: 50 },
-      notebook: { x: 30, y: 30 },
     },
   },
   {
@@ -101,7 +79,7 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/gsap.svg`,
     width: 60,
     positions: {
-      chaos: { x: 24, y: 60 },
+      chaos: { x: 12.2, y: 81.4 },
       cleaned: { x: 50, y: 50 },
       notebook: { x: 24, y: 60 },
     },
@@ -112,7 +90,7 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/notion.svg`,
     width: 60,
     positions: {
-      chaos: { x: 76, y: 35 },
+      chaos: { x: 47.8, y: 82.9 },
       cleaned: { x: 66, y: 50 },
       notebook: { x: 76, y: 35 },
     },
@@ -129,36 +107,14 @@ export const heroSvgs: HeroSvg[] = [
     },
   },
   {
-    id: "paperclip",
-    label: "Paperclip",
-    src: `${SVGS}/paperclip.svg`,
-    width: 60,
-    positions: {
-      chaos: { x: 45, y: 72 },
-      cleaned: { x: 18, y: 72 },
-      notebook: { x: 45, y: 72 },
-    },
-  },
-  {
     id: "ring-text-badge",
     label: "Ring text badge",
     src: `${SVGS}/ring-text-badge.svg`,
     width: 60,
     positions: {
-      chaos: { x: 12, y: 45 },
+      chaos: { x: 55.3, y: 56.9 },
       cleaned: { x: 34, y: 72 },
       notebook: { x: 12, y: 45 },
-    },
-  },
-  {
-    id: "safari",
-    label: "Safari",
-    src: `${SVGS}/safari.svg`,
-    width: 60,
-    positions: {
-      chaos: { x: 60, y: 48 },
-      cleaned: { x: 50, y: 72 },
-      notebook: { x: 60, y: 48 },
     },
   },
   {
@@ -167,7 +123,7 @@ export const heroSvgs: HeroSvg[] = [
     src: `${SVGS}/smiley-face-badge.svg`,
     width: 60,
     positions: {
-      chaos: { x: 88, y: 90 },
+      chaos: { x: 97.6, y: 39.9 },
       cleaned: { x: 66, y: 72 },
       notebook: { x: 88, y: 90 },
     },

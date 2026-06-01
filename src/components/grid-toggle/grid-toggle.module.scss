@@ -1,6 +1,6 @@
 @use "@/mixins.scss" as *;
 
-.theme-toggle {
+.grid-toggle {
     display: grid;
     place-items: center;
     width: 22px;
@@ -17,25 +17,16 @@
         opacity: 1;
     }
 
+    &--off {
+        opacity: 0.4;
+    }
+
     svg {
-        width: 11px;
-        height: 11px;
+        width: 12px;
+        height: 12px;
         fill: none;
         stroke: var(--hero-ink);
         stroke-width: 1.5;
         stroke-linecap: round;
-        transition: stroke 0.3s;
-
-        circle,
-        path {
-            fill: var(--hero-ink);
-            stroke: none;
-            transition: fill 0.3s;
-        }
-
-        circle {
-            fill: none;
-            stroke: var(--hero-ink);
-        }
     }
 }

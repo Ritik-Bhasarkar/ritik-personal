@@ -18,7 +18,13 @@ const round1 = (n: number): number => Math.round(n * 10) / 10;
 const isMode = (v: string | null): v is AssetMode =>
     v === 'chaos' || v === 'cleaned' || v === 'notebook';
 
-export default function HeroSvgs() {
+interface HeroSvgsProps {
+    hideIds?: string[];
+}
+
+export default function HeroSvgs({ hideIds = [] }: HeroSvgsProps) {
+    const items = heroSvgs.filter(svg => !hideIds.includes(svg.id));
+
     const [mode, setMode] = useState<AssetMode>(DEFAULT_ASSET_MODE);
     const [overrides, setOverrides] = useState<
         Partial<Record<AssetMode, Record<string, Point>>>
@@ -87,7 +93,7 @@ export default function HeroSvgs() {
     };
 
     const capturePositions = () => {
-        const snippet = heroSvgs
+        const snippet = items
             .map(svg => {
                 const base = svg.positions[mode];
                 const o = overrides[mode]?.[svg.id];
@@ -102,7 +108,7 @@ export default function HeroSvgs() {
 
     return (
         <div className={styles['hero-svgs']} data-mode={mode} ref={stageRef}>
-            {heroSvgs.map(svg => {
+            {items.map(svg => {
                 const base = svg.positions[mode];
                 const o = overrides[mode]?.[svg.id];
                 const x = o?.x ?? base.x;

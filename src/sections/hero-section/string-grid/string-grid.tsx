@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { useGrid } from '@/context/grid';
 import styles from './string-grid.module.scss';
 
 const COLS = 20;
@@ -22,6 +23,7 @@ interface Pt {
 
 export default function StringGrid() {
     const containerRef = useRef<HTMLDivElement>(null);
+    const { gridVisible } = useGrid();
 
     useEffect(() => {
         const container = containerRef.current;
@@ -251,5 +253,11 @@ export default function StringGrid() {
         };
     }, []);
 
-    return <div ref={containerRef} className={styles['string-grid']} />;
+    return (
+        <div
+            ref={containerRef}
+            className={styles['string-grid']}
+            style={{ display: gridVisible ? undefined : 'none' }}
+        />
+    );
 }
