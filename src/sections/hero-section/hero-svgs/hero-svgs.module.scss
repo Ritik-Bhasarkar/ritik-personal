@@ -1,21 +1,18 @@
 @use "@/mixins.scss" as *;
 
 .hero-svgs {
-    position: absolute;
+    position: fixed;
     inset: 0;
-    z-index: 50;
+    z-index: 5;
     pointer-events: none;
 
     &--item {
         position: absolute;
         display: block;
         height: auto;
-        pointer-events: auto;
         cursor: grab;
         touch-action: none;
-        transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-            left 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: left, top, opacity;
 
         &:active {
             cursor: grabbing;
@@ -24,13 +21,13 @@
 
     &--capture {
         position: absolute;
-        top: 80px;
-        left: 36px;
-        z-index: 60;
+        top: var(--spacing-lg, 16px);
+        left: var(--spacing-lg, 16px);
+        z-index: 70;
         padding: 8px 14px;
-        border: 1px solid var(--hero-ink, #111);
+        border: 1px solid rgba(0, 0, 0, 0.85);
         border-radius: 8px;
-        background: var(--hero-ink, #111);
+        background: rgba(0, 0, 0, 0.85);
         color: #fff;
         font-size: 12px;
         pointer-events: auto;

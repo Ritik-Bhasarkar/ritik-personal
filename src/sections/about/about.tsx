@@ -1,12 +1,10 @@
 import FloatingAssets from "@/components/floating-assets/floating-assets";
-import HeroSvgs from "@/sections/hero-section/hero-svgs/hero-svgs";
 import "./about.scss";
 
 export default function About() {
 	return (
 		<div className="about">
 			<FloatingAssets />
-			<HeroSvgs hideIds={["paperclip", "safari", "github", "npm", "notion", "figma", "bun"]} />
 			<div className="about--content">
 				<div className="about--content--top">
 					<div className="about--content--top--heading">
