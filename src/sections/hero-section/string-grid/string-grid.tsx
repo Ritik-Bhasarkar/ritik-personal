@@ -5,8 +5,8 @@ import * as THREE from 'three';
 import { useGrid } from '@/context/grid';
 import styles from './string-grid.module.scss';
 
-const COLS = 20;
-const ROWS = 14;
+const COLS = 4;
+const ROWS = 3;
 const K_HOME = 70;
 const K_NEIGHBOR = 320;
 const DAMPING = 0.91;
