@@ -9,14 +9,16 @@ interface ProjectContent {
     title: string;
     description: string;
     status?: string;
-    image?: string;
+    link?: string;
+    images?: string[];
 }
 
 interface Project {
     no: string;
     title: string;
     desc: string;
-    image: string;
+    link: string;
+    images: string[];
     inProgress: boolean;
     accent: string;
 }
@@ -29,7 +31,8 @@ const PROJECTS: Project[] = CONTENT.map((project, index) => ({
     no: String(index + 1).padStart(2, '0'),
     title: project.title,
     desc: project.description,
-    image: project.image ?? '',
+    link: project.link ?? '',
+    images: (project.images ?? []).slice(0, 2),
     inProgress: (project.status ?? '').toLowerCase() === 'in progress',
     accent: ACCENTS[index % ACCENTS.length],
 }));
@@ -103,8 +106,16 @@ export default function WorkVersion2() {
                                 onMouseEnter={() => open(index)}
                                 onFocus={() => open(index)}
                                 onBlur={() => setActive(null)}
-                                tabIndex={0}
                             >
+                                {project.link && (
+                                    <a
+                                        className={styles['work-version-2--row--link']}
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Open ${project.title} in a new tab`}
+                                    />
+                                )}
                                 <span className={styles['work-version-2--row--no']}>{project.no}</span>
                                 <span className={styles['work-version-2--row--title']}>
                                     {project.title}
@@ -134,8 +145,17 @@ export default function WorkVersion2() {
                 style={{ '--accent': activeProject.accent } as React.CSSProperties}
                 aria-hidden="true"
             >
-                {activeProject.image ? (
-                    <img src={activeProject.image} alt="" decoding="async" />
+                {activeProject.images.length > 0 ? (
+                    activeProject.images.map((src, index) => (
+                        <img
+                            key={src}
+                            className={styles['work-version-2--float--card']}
+                            style={{ '--i': index } as React.CSSProperties}
+                            src={src}
+                            alt=""
+                            decoding="async"
+                        />
+                    ))
                 ) : (
                     <span className={styles['work-version-2--float--placeholder']}>{activeProject.title}</span>
                 )}

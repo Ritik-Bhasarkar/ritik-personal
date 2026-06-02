@@ -155,7 +155,7 @@ export default function FloatingAssets() {
 					<button
 						key={asset.id}
 						type="button"
-						className={styles['floating-assets--item']}
+						className={`${styles['floating-assets--item']} ${asset.id === 'table-lamp' ? styles['floating-assets--item-lamp'] : ''}`}
 						aria-label={asset.label}
 						onPointerDown={e => startDrag(e, asset.id, x, y)}
 						onPointerMove={onDrag}
@@ -183,6 +183,9 @@ export default function FloatingAssets() {
 							loading="lazy"
 							decoding="async"
 						/>
+						{asset.id === 'table-lamp' && (
+							<span className={styles['floating-assets--lamp-glow']} aria-hidden="true" />
+						)}
 						{asset.id === 'folder' && (
 							<span className={styles['floating-assets--popover']} aria-hidden="true">
 								{FOLDER_ICONS.map(name => (

@@ -31,6 +31,36 @@
 		}
 	}
 
+	// Lamp: no rotate/scale on hover — just turn the light on.
+	&--item-lamp:hover {
+		transform: translate(-50%, -50%) rotate(var(--rot)) scale(var(--scale));
+	}
+
+	&--lamp-glow {
+		position: absolute;
+		left: 50%;
+		top: 46%;
+		width: 62%;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		transform: translate(-50%, -50%) scale(0.6);
+		background: radial-gradient(
+			circle,
+			rgba(255, 221, 130, 0.95) 0%,
+			rgba(255, 199, 92, 0.55) 38%,
+			rgba(255, 188, 70, 0) 72%
+		);
+		filter: blur(8px);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	&--item-lamp:hover &--lamp-glow {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
 	&--popover {
 		position: absolute;
 		left: 50%;
@@ -71,6 +101,10 @@
 			transform: translate(-50%, -50%) rotate(0deg)
 				scale(calc(var(--scale) * 1.06));
 		}
+	}
+
+	&[data-mode="cleaned"] &--item-lamp:hover {
+		transform: translate(-50%, -50%) rotate(0deg) scale(var(--scale));
 	}
 
 	&--img {

@@ -4,17 +4,23 @@
 			"id": "seokun",
 			"title": "SEOkun",
 			"description": "a code-aware SEO audit tool that maps Lighthouse findings to specific source files so AI coding agents (via MCP) can fix the issues directly in code.",
-			"status": "In progress"
+			"status": "In progress",
+			"link": "https://github.com/Ritik-Bhasarkar/seokun",
+			"images": ["/work/seokun-1.png", "/work/seokun-2.png"]
+		},
+		{
+			"id": "kappax",
+			"title": "KappaX",
+			"description": "Developed the core web platform for KappaX, combining performance, SEO, content publishing, and commerce integrations.",
+			"link": "https://kappax.io/",
+			"images": ["/work/kappax-1.png", "/work/kappax-2.png"]
 		},
 		{
 			"id": "portfolio-2023",
 			"title": "Portfolio Archive",
-			"description": "First Iteration of my portfolio. Focused on different animating components."
-		},
-		{
-			"id": "keyboard",
-			"title": "Keyboard Vibe",
-			"description": "A custom keyboard experience. Spin-off of MechaVibes."
+			"description": "First Iteration of my portfolio. Focused on different animating components.",
+			"link": "https://bhasarkarritik.vercel.app/",
+			"images": ["/work/portfolio-1.png", "/work/portfolio-2.png"]
 		}
 	]
 }
