@@ -1,13 +1,20 @@
+'use client';
+
+import { scrollToSection } from '@/lib/lenis';
 import links from '../../../../public/links.json';
 import styles from './hero-footer.module.scss';
 
 export default function HeroFooter() {
     return (
         <div className={styles['hero-footer']}>
-            <div className={styles['hero-footer--scroll']}>
+            <button
+                type="button"
+                className={styles['hero-footer--scroll']}
+                onClick={() => scrollToSection('#work-v2')}
+            >
                 <span className={styles['hero-footer--scroll-arrow']} />
                 Scroll — <b>Selected Work</b>
-            </div>
+            </button>
             <div className={styles['hero-footer--socials']}>
                 <a href={links.github} target="_blank" rel="noopener noreferrer"><span>GitHub</span> ↗</a>
                 <a href={links.resume} target="_blank" rel="noopener noreferrer"><span>Resume</span> ↗</a>

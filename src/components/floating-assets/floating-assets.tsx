@@ -11,8 +11,8 @@ import {
 import { playSound } from '@/lib/sound';
 import styles from './floating-assets.module.scss';
 
-// Flip to false (or delete the button block) once default positions are captured.
-const SHOW_CAPTURE_BUTTON = true;
+// Dev-only position-capture tool — excluded from production builds.
+const SHOW_CAPTURE_BUTTON = process.env.NODE_ENV !== 'production';
 
 const MODE_META: Record<AssetMode, { label: string; icon: React.ReactNode }> = {
 	chaos: {

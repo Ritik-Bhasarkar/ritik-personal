@@ -19,6 +19,20 @@
         display: flex;
         align-items: center;
         gap: 14px;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: inherit;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        cursor: pointer;
+        opacity: 0.75;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
     &--scroll-arrow {

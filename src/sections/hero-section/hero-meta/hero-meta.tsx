@@ -28,7 +28,7 @@ export default function HeroMeta() {
                 <span>
                     Frontend Developer
                     <br />
-                    Pune, IN · IST <b className={styles['hero-meta--clock']}>{clock}</b>
+                    INDIA · <b className={styles['hero-meta--clock']}>{clock}</b>
                 </span>
                 <GridToggle />
             </div>
