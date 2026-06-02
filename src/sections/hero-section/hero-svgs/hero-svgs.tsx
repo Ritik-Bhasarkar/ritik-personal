@@ -86,6 +86,9 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
     };
 
     useEffect(() => {
+        // mobile: drop the travelling logos and skip the scroll-driven positioning
+        if (!isAbout && window.matchMedia('(max-width: 480px)').matches) return;
+
         const pct = (p: Pt): Pt => ({
             x: (p.x / 100) * window.innerWidth,
             y: (p.y / 100) * window.innerHeight,
@@ -243,7 +246,9 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
 
     return (
         <>
-            <div className={`${styles['hero-svgs']} ${edit ? styles['hero-svgs--editing'] : ''}`}>
+            <div
+                className={`${styles['hero-svgs']} ${!isAbout ? styles['hero-svgs--travel'] : ''} ${edit ? styles['hero-svgs--editing'] : ''}`}
+            >
                 {heroSvgs.map((svg, i) => (
                     <img
                         key={svg.id}

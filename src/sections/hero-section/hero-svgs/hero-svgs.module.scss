@@ -67,3 +67,11 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .hero-svgs {
+        &--travel {
+            display: none;
+        }
+    }
+}

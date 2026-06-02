@@ -180,3 +180,9 @@
 		}
 	}
 }
+
+@media (max-width: 480px) {
+	.floating-assets {
+		display: none;
+	}
+}
