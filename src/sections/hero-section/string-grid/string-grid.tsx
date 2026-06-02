@@ -7,6 +7,9 @@ import styles from './string-grid.module.scss';
 
 const COLS = 4;
 const ROWS = 3;
+// cumulative vertical line positions (top → bottom), one per row line (ROWS + 1).
+// the middle band is slightly taller than the outer two.
+const ROW_FRACTIONS = [0, 0.21, 0.81, 1];
 const K_HOME = 70;
 const K_NEIGHBOR = 320;
 const DAMPING = 0.91;
@@ -21,7 +24,12 @@ interface Pt {
     ox: number; oy: number;
 }
 
-export default function StringGrid() {
+interface StringGridProps {
+    // 'fixed' = full-viewport background (hero); 'inline' = fills its parent section
+    variant?: 'fixed' | 'inline';
+}
+
+export default function StringGrid({ variant = 'fixed' }: StringGridProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const { gridVisible } = useGrid();
 
@@ -55,7 +63,7 @@ export default function StringGrid() {
             for (let r = 0; r < PH; r++) {
                 for (let c = 0; c < PW; c++) {
                     const ox = (c / COLS) * W - W / 2;
-                    const oy = H / 2 - (r / ROWS) * H;
+                    const oy = H / 2 - ROW_FRACTIONS[r] * H;
                     pts.push({ x: ox, y: oy, vx: 0, vy: 0, ox, oy });
                 }
             }
@@ -76,9 +84,9 @@ export default function StringGrid() {
         const isDark = () => document.documentElement.classList.contains('theme-dark');
 
         const mat = new THREE.LineBasicMaterial({
-            color: 0x4b4b4b,
+            color: 0x9a9a9a,
             transparent: true,
-            opacity: 0.38,
+            opacity: 0.22,
         });
 
         scene.add(new THREE.LineSegments(geo, mat));
@@ -91,9 +99,9 @@ export default function StringGrid() {
         markAttr.setUsage(THREE.DynamicDrawUsage);
         markGeo.setAttribute('position', markAttr);
         const markMat = new THREE.LineBasicMaterial({
-            color: 0x4b4b4b,
+            color: 0x9a9a9a,
             transparent: true,
-            opacity: 0.55,
+            opacity: 0.32,
         });
         scene.add(new THREE.LineSegments(markGeo, markMat));
 
@@ -244,10 +252,10 @@ export default function StringGrid() {
             for (let s = 0; s < SUBSTEPS; s++) step(DT / SUBSTEPS);
             syncGeo();
             syncMarks();
-            mat.color.set(isDark() ? 0xc8c8c8 : 0x4b4b4b);
-            mat.opacity = isDark() ? 0.1 : 0.38;
-            markMat.color.set(isDark() ? 0xc8c8c8 : 0x4b4b4b);
-            markMat.opacity = isDark() ? 0.22 : 0.55;
+            mat.color.set(isDark() ? 0xc8c8c8 : 0x9a9a9a);
+            mat.opacity = isDark() ? 0.1 : 0.22;
+            markMat.color.set(isDark() ? 0xc8c8c8 : 0x9a9a9a);
+            markMat.opacity = isDark() ? 0.22 : 0.32;
             renderer.render(scene, camera);
         };
         tick();
@@ -287,7 +295,7 @@ export default function StringGrid() {
     return (
         <div
             ref={containerRef}
-            className={styles['string-grid']}
+            className={`${styles['string-grid']} ${variant === 'inline' ? styles['string-grid--inline'] : ''}`}
             style={{ display: gridVisible ? undefined : 'none' }}
         />
     );

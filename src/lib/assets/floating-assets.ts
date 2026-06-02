@@ -36,7 +36,7 @@ export const floatingAssets: FloatingAsset[] = [
     sound: `${SOUNDS}/water-drop.mp3`,
     width: 158,
     positions: {
-      chaos: { x: 23.3, y: 73.4, rotation: -14 },
+      chaos: { x: 85.4, y: 61.6, rotation: -14 },
       cleaned: { x: 18, y: 22, rotation: 0 },
       notebook: { x: 20, y: 25, rotation: -5 },
     },

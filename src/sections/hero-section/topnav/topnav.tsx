@@ -2,7 +2,7 @@
 
 import { useRef, useCallback } from 'react';
 import { animate } from 'animejs';
-import MusicPlayer from '@/components/music-player/music-player';
+import { scrollToSection } from '@/lib/lenis';
 import styles from './topnav.module.scss';
 
 function ScrambleLink({ href, label }: { href: string; label: string }) {
@@ -37,8 +37,16 @@ function ScrambleLink({ href, label }: { href: string; label: string }) {
         if (spanRef.current) spanRef.current.textContent = label;
     }, [label]);
 
+    const onClick = useCallback(
+        (e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            scrollToSection(href);
+        },
+        [href],
+    );
+
     return (
-        <a href={href} onMouseEnter={start} onMouseLeave={stop}>
+        <a href={href} onClick={onClick} onMouseEnter={start} onMouseLeave={stop}>
             [<span ref={spanRef}>{label}</span>]
         </a>
     );
@@ -48,13 +56,9 @@ export default function Topnav() {
     return (
         <nav className={styles.topnav}>
             <div className={styles['topnav--brand']}>RITIK©</div>
-            <div className={styles['topnav--center']}>
-                <MusicPlayer />
-            </div>
             <div className={styles['topnav--links']}>
                 <ScrambleLink href="#work" label="Work" />
                 <ScrambleLink href="#about" label="About" />
-                <ScrambleLink href="#contact" label="Contact" />
             </div>
         </nav>
     );

@@ -1,0 +1,18 @@
+@use "@/mixins.scss" as *;
+
+.home {
+	position: relative;
+	// own stacking context so the grid (z-index: -1) and the cream backdrop
+	// (z-index: -2) are scoped here, layering correctly behind every section
+	z-index: 0;
+
+	// cream backdrop, painted below the grid so the grid lines stay visible
+	&::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		z-index: -2;
+		background: rgb(255, 250, 245);
+		pointer-events: none;
+	}
+}

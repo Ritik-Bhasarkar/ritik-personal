@@ -1,0 +1,37 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5EC"/>
+      <stop offset="1" stop-color="#F5C7A5"/>
+    </linearGradient>
+    <linearGradient id="card" x1="240" y1="180" x2="960" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFE7D7" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="56" width="1056" height="638" rx="34" fill="#FFF9F3" fill-opacity="0.58" stroke="#2C221C" stroke-opacity="0.08"/>
+  <rect x="104" y="88" width="992" height="576" rx="28" fill="url(#card)" stroke="#2C221C" stroke-opacity="0.06"/>
+  <rect x="132" y="120" width="180" height="500" rx="22" fill="#2C221C" fill-opacity="0.94"/>
+  <rect x="348" y="120" width="700" height="52" rx="16" fill="#2C221C" fill-opacity="0.08"/>
+  <rect x="348" y="192" width="360" height="188" rx="24" fill="#FFFFFF" fill-opacity="0.78" stroke="#2C221C" stroke-opacity="0.06"/>
+  <rect x="736" y="192" width="312" height="188" rx="24" fill="#FFFFFF" fill-opacity="0.78" stroke="#2C221C" stroke-opacity="0.06"/>
+  <rect x="348" y="412" width="700" height="208" rx="28" fill="#FFFFFF" fill-opacity="0.7" stroke="#2C221C" stroke-opacity="0.06"/>
+  <circle cx="216" cy="208" r="54" fill="#F08D57"/>
+  <rect x="188" y="312" width="56" height="12" rx="6" fill="#FFF9F3" fill-opacity="0.9"/>
+  <rect x="188" y="338" width="82" height="12" rx="6" fill="#FFF9F3" fill-opacity="0.65"/>
+  <rect x="188" y="364" width="72" height="12" rx="6" fill="#FFF9F3" fill-opacity="0.45"/>
+  <circle cx="460" cy="302" r="56" fill="#F08D57" fill-opacity="0.16"/>
+  <path d="M446 316C446 280 476 250 512 250C548 250 578 280 578 316C578 352 548 382 512 382C476 382 446 352 446 316Z" fill="#F08D57" fill-opacity="0.28"/>
+  <path d="M508 236H616V272H508V236Z" fill="#2C221C" fill-opacity="0.18"/>
+  <rect x="776" y="246" width="224" height="18" rx="9" fill="#2C221C" fill-opacity="0.16"/>
+  <rect x="776" y="282" width="188" height="18" rx="9" fill="#2C221C" fill-opacity="0.1"/>
+  <rect x="776" y="318" width="154" height="18" rx="9" fill="#2C221C" fill-opacity="0.08"/>
+  <rect x="384" y="456" width="612" height="24" rx="12" fill="#2C221C" fill-opacity="0.1"/>
+  <rect x="384" y="502" width="472" height="24" rx="12" fill="#2C221C" fill-opacity="0.08"/>
+  <rect x="384" y="548" width="530" height="24" rx="12" fill="#2C221C" fill-opacity="0.06"/>
+  <circle cx="918" cy="522" r="74" fill="#F08D57" fill-opacity="0.22"/>
+  <path d="M878 534C878 503 903 478 934 478C965 478 990 503 990 534C990 565 965 590 934 590C903 590 878 565 878 534Z" fill="#F08D57" fill-opacity="0.68"/>
+  <text x="160" y="194" fill="#FFF9F3" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="3">KAPPAX</text>
+  <text x="384" y="150" fill="#2C221C" fill-opacity="0.55" font-size="16" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">MARKETING PLATFORM</text>
+</svg>

@@ -15,10 +15,9 @@ function getIST(): string {
 }
 
 export default function HeroMeta() {
-    const [clock, setClock] = useState('');
+    const [clock, setClock] = useState(getIST());
 
     useEffect(() => {
-        setClock(getIST());
         const id = setInterval(() => setClock(getIST()), 1000);
         return () => clearInterval(id);
     }, []);

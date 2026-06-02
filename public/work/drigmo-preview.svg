@@ -1,0 +1,21 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8D2E6"/>
+      <stop offset="1" stop-color="#E85EA0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <rect x="116" y="82" width="968" height="596" rx="36" fill="#FFF8FC" fill-opacity="0.28" stroke="#7B2052" stroke-opacity="0.08"/>
+  <rect x="220" y="166" width="760" height="428" rx="34" fill="#FFFFFF" fill-opacity="0.78"/>
+  <ellipse cx="498" cy="380" rx="160" ry="132" fill="#FFFFFF"/>
+  <ellipse cx="548" cy="368" rx="82" ry="82" fill="#F0B34A"/>
+  <path d="M508 314C522 350 544 370 586 384C548 412 522 440 506 484C474 462 456 428 452 392C450 358 462 332 508 314Z" fill="#FFFFFF"/>
+  <rect x="664" y="286" width="176" height="20" rx="10" fill="#7B2052" fill-opacity="0.18"/>
+  <rect x="664" y="326" width="214" height="18" rx="9" fill="#7B2052" fill-opacity="0.12"/>
+  <rect x="664" y="366" width="186" height="18" rx="9" fill="#7B2052" fill-opacity="0.08"/>
+  <rect x="664" y="438" width="222" height="20" rx="10" fill="#7B2052" fill-opacity="0.14"/>
+  <rect x="664" y="478" width="148" height="20" rx="10" fill="#7B2052" fill-opacity="0.1"/>
+  <text x="330" y="532" fill="#7B2052" font-size="52" font-family="Arial, Helvetica, sans-serif" font-weight="800" letter-spacing="1.4">Drigmo</text>
+  <text x="332" y="572" fill="#7B2052" fill-opacity="0.65" font-size="18" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.4">AI playlist of food and places</text>
+</svg>

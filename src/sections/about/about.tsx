@@ -1,9 +1,10 @@
 import FloatingAssets from "@/components/floating-assets/floating-assets";
+import links from "../../../public/links.json";
 import "./about.scss";
 
 export default function About() {
 	return (
-		<div className="about">
+		<div className="about" id="about">
 			<FloatingAssets />
 			<div className="about--content">
 				<div className="about--content--top">
@@ -29,7 +30,7 @@ export default function About() {
 			</div>
 			<div className="about--socials">
 				<a
-					href="https://github.com/ritikbhasarkar"
+					href={links.github}
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="GitHub"
@@ -42,7 +43,7 @@ export default function About() {
 					/>
 				</a>
 				<a
-					href="https://www.linkedin.com/in/ritikbhasarkar"
+					href={links.linkedin}
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="LinkedIn"
@@ -55,7 +56,7 @@ export default function About() {
 					/>
 				</a>
 				<a
-					href="https://x.com/ritikbhasarkar"
+					href={links.x}
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="X"
@@ -67,7 +68,7 @@ export default function About() {
 						decoding="async"
 					/>
 				</a>
-				<a href="mailto:ritik@example.com" aria-label="Email">
+				<a href={links.email} aria-label="Email">
 					<img
 						src="/floating-assets/svgs/mail.svg"
 						alt="Email"

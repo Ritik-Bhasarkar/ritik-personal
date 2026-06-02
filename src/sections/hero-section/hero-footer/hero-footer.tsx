@@ -1,3 +1,4 @@
+import links from '../../../../public/links.json';
 import styles from './hero-footer.module.scss';
 
 export default function HeroFooter() {
@@ -8,10 +9,10 @@ export default function HeroFooter() {
                 Scroll — <b>Selected Work</b>
             </div>
             <div className={styles['hero-footer--socials']}>
-                <a href="https://github.com/ritikbhasarkar" target="_blank" rel="noopener noreferrer"><span>GitHub</span> ↗</a>
-                <a href="https://read.cv/ritikbhasarkar" target="_blank" rel="noopener noreferrer"><span>Read.cv</span> ↗</a>
-                <a href="https://twitter.com/ritikbhasarkar" target="_blank" rel="noopener noreferrer"><span>Twitter</span> ↗</a>
-                <a href="mailto:ritik@example.com"><span>Email</span> ↗</a>
+                <a href={links.github} target="_blank" rel="noopener noreferrer"><span>GitHub</span> ↗</a>
+                <a href={links.resume} target="_blank" rel="noopener noreferrer"><span>Resume</span> ↗</a>
+                <a href={links.x} target="_blank" rel="noopener noreferrer"><span>Twitter</span> ↗</a>
+                <a href={links.email}><span>Email</span> ↗</a>
             </div>
         </div>
     );

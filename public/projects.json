@@ -1,0 +1,20 @@
+{
+	"projects": [
+		{
+			"id": "seokun",
+			"title": "SEOkun",
+			"description": "a code-aware SEO audit tool that maps Lighthouse findings to specific source files so AI coding agents (via MCP) can fix the issues directly in code.",
+			"status": "In progress"
+		},
+		{
+			"id": "portfolio-2023",
+			"title": "Portfolio Archive",
+			"description": "First Iteration of my portfolio. Focused on different animating components."
+		},
+		{
+			"id": "keyboard",
+			"title": "Keyboard Vibe",
+			"description": "A custom keyboard experience. Spin-off of MechaVibes."
+		}
+	]
+}

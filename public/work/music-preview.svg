@@ -1,0 +1,38 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0F5"/>
+      <stop offset="1" stop-color="#DF6F8D"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="340" y1="240" x2="900" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#FFE4EE" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="56" width="1056" height="638" rx="34" fill="#FFF9FB" fill-opacity="0.36" stroke="#61263C" stroke-opacity="0.08"/>
+  <rect x="104" y="90" width="992" height="570" rx="28" fill="#FFF8FA" fill-opacity="0.7" stroke="#61263C" stroke-opacity="0.06"/>
+  <rect x="132" y="122" width="306" height="506" rx="26" fill="#61263C" fill-opacity="0.1"/>
+  <rect x="468" y="122" width="608" height="190" rx="28" fill="url(#wave)" stroke="#61263C" stroke-opacity="0.06"/>
+  <rect x="468" y="338" width="286" height="290" rx="28" fill="#FFFFFF" fill-opacity="0.82" stroke="#61263C" stroke-opacity="0.06"/>
+  <rect x="782" y="338" width="294" height="290" rx="28" fill="#FFFFFF" fill-opacity="0.82" stroke="#61263C" stroke-opacity="0.06"/>
+  <circle cx="286" cy="236" r="86" fill="#DF6F8D" fill-opacity="0.22"/>
+  <circle cx="286" cy="236" r="52" fill="#FFFFFF" fill-opacity="0.8"/>
+  <path d="M492 220C522 190 560 174 600 174C650 174 688 196 718 228C748 260 782 278 826 278C870 278 912 256 946 220" stroke="#DF6F8D" stroke-width="14" stroke-linecap="round"/>
+  <path d="M492 254C524 224 562 208 602 208C652 208 690 230 720 262C750 294 784 312 828 312C870 312 912 290 946 254" stroke="#F4B36B" stroke-width="14" stroke-linecap="round"/>
+  <path d="M492 288C524 258 562 242 602 242C652 242 690 264 720 296C750 328 784 346 828 346C870 346 912 324 946 288" stroke="#7FE0D0" stroke-width="14" stroke-linecap="round"/>
+  <rect x="168" y="392" width="218" height="18" rx="9" fill="#61263C" fill-opacity="0.16"/>
+  <rect x="168" y="428" width="154" height="18" rx="9" fill="#61263C" fill-opacity="0.12"/>
+  <rect x="168" y="464" width="198" height="18" rx="9" fill="#61263C" fill-opacity="0.1"/>
+  <rect x="168" y="522" width="216" height="82" rx="18" fill="#FFFFFF" fill-opacity="0.7"/>
+  <rect x="496" y="382" width="228" height="20" rx="10" fill="#DF6F8D" fill-opacity="0.2"/>
+  <rect x="496" y="422" width="166" height="20" rx="10" fill="#DF6F8D" fill-opacity="0.14"/>
+  <rect x="496" y="462" width="196" height="20" rx="10" fill="#DF6F8D" fill-opacity="0.1"/>
+  <rect x="496" y="522" width="212" height="52" rx="18" fill="#DF6F8D" fill-opacity="0.14"/>
+  <rect x="814" y="382" width="210" height="20" rx="10" fill="#61263C" fill-opacity="0.18"/>
+  <rect x="814" y="422" width="166" height="20" rx="10" fill="#61263C" fill-opacity="0.12"/>
+  <rect x="814" y="462" width="196" height="20" rx="10" fill="#61263C" fill-opacity="0.1"/>
+  <rect x="814" y="522" width="176" height="52" rx="18" fill="#F4B36B" fill-opacity="0.18"/>
+  <text x="168" y="322" fill="#61263C" fill-opacity="0.75" font-size="20" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="2">MUSIC x EMOTION</text>
+  <text x="496" y="170" fill="#61263C" fill-opacity="0.55" font-size="16" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">MOOD VISUALS</text>
+</svg>

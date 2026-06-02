@@ -1,196 +1,290 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { heroSvgs } from '@/lib/assets/hero-svgs';
-import { playSound } from '@/lib/sound';
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { heroSvgs, type HeroSvg } from '@/lib/assets/hero-svgs';
 import styles from './hero-svgs.module.scss';
 
-// Flip to false (or delete the button block) once positions are captured.
-const SHOW_CAPTURE_BUTTON = true;
-
-const SOUNDS = '/floating-assets/sound-effects';
-const HOVER_SOUND = `${SOUNDS}/mouse-click.mp3`;
-const DRAG_SOUND = `${SOUNDS}/AirDrop.wav`;
-
-type Endpoint = 'hero' | 'about';
-
-interface Point {
+interface Pt {
     x: number;
     y: number;
 }
 
-const round1 = (n: number): number => Math.round(n * 10) / 10;
-const lerp = (a: number, b: number, t: number): number => a + (b - a) * t;
+type EditKey = 'hero' | 'statement' | 'about';
+
+const clamp01 = (n: number): number => Math.min(1, Math.max(0, n));
+const clamp = (n: number, min: number, max: number): number => Math.min(max, Math.max(min, n));
+const lerpPt = (a: Pt, b: Pt, t: number): Pt => ({
+    x: a.x + (b.x - a.x) * t,
+    y: a.y + (b.y - a.y) * t,
+});
+const cloneSvgs = (): HeroSvg[] =>
+    heroSvgs.map(s => ({ ...s, hero: { ...s.hero }, statement: { ...s.statement }, about: { ...s.about } }));
 
 interface HeroSvgsProps {
-    // 'travel' = scroll-driven hero -> about (home). 'about' = static at the about layout.
+    // 'travel' = full hero -> statement -> work-dock -> about journey (home).
+    // 'about' = static at the about layout (standalone /about route).
     variant?: 'travel' | 'about';
 }
 
+const isDev = process.env.NODE_ENV === 'development';
+
+// section keyframe nearest the viewport center — captured once when the editor turns on,
+// then locked so dragged logos don't jump as you scroll.
+const detectSectionKey = (isAbout: boolean): EditKey => {
+    if (isAbout) return 'about';
+    const docCenter = (el: Element | null): number | null => {
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        return r.top + window.scrollY + r.height / 2;
+    };
+    const viewCenter = window.scrollY + window.innerHeight / 2;
+    const cands: [EditKey, number | null][] = [
+        ['hero', docCenter(document.querySelector('[data-hero]'))],
+        ['statement', docCenter(document.getElementById('statement'))],
+        ['about', docCenter(document.querySelector('.about'))],
+    ];
+    let best: EditKey = 'hero';
+    let bestDist = Infinity;
+    for (const [key, center] of cands) {
+        if (center == null) continue;
+        const dist = Math.abs(center - viewCenter);
+        if (dist < bestDist) {
+            bestDist = dist;
+            best = key;
+        }
+    }
+    return best;
+};
+
 export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
     const isAbout = variant === 'about';
-    const interactive = SHOW_CAPTURE_BUTTON;
+    const itemsRef = useRef<(HTMLImageElement | null)[]>([]);
+    const curRef = useRef<Pt[]>([]);
+    const opRef = useRef<number[]>([]);
+    const dataRef = useRef<HeroSvg[]>(cloneSvgs());
+    const editRef = useRef(false);
+    const keyRef = useRef<EditKey>(isAbout ? 'about' : 'hero');
+    const dragRef = useRef<{ i: number; offX: number; offY: number } | null>(null);
 
-    const [progress, setProgress] = useState(isAbout ? 1 : 0);
-    // Layer fades out while the Statement section covers the viewport (so icons
-    // never sit over the statement text), full opacity on hero / about.
-    const [layerOpacity, setLayerOpacity] = useState(1);
-    const [overrides, setOverrides] = useState<Record<Endpoint, Record<string, Point>>>({
-        hero: {},
-        about: {},
-    });
+    const [edit, setEdit] = useState(false);
+    const [editKey, setEditKey] = useState<EditKey>(isAbout ? 'about' : 'hero');
+    const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
 
-    const stageRef = useRef<HTMLDivElement | null>(null);
-    const dragRef = useRef<{
-        id: string;
-        key: Endpoint;
-        pointerId: number;
-        startX: number;
-        startY: number;
-        originX: number;
-        originY: number;
-    } | null>(null);
-
-    // Scroll-driven progress: 0 at hero top, 1 when the About section reaches the
-    // top of the viewport — so icons travel wherever About sits in the order.
     useEffect(() => {
-        if (isAbout) return;
+        editRef.current = edit;
+    }, [edit]);
+
+    const toggleEdit = (): void => {
+        const next = !edit;
+        if (next) {
+            // lock the keyframe to whatever section is in view when editing starts
+            const key = detectSectionKey(isAbout);
+            keyRef.current = key;
+            setEditKey(key);
+        }
+        setEdit(next);
+    };
+
+    useEffect(() => {
+        const pct = (p: Pt): Pt => ({
+            x: (p.x / 100) * window.innerWidth,
+            y: (p.y / 100) * window.innerHeight,
+        });
+
+        curRef.current = heroSvgs.map(svg => pct(isAbout ? svg.about : svg.hero));
+        opRef.current = heroSvgs.map(() => 1);
+
+        const docTop = (el: Element | null): number | null =>
+            el ? el.getBoundingClientRect().top + window.scrollY : null;
+
         let raf = 0;
-        const getAboutTop = () => {
-            const el = document.querySelector('.about');
-            if (!el) return window.innerHeight || 1;
-            return el.getBoundingClientRect().top + window.scrollY || 1;
-        };
-        let aboutTop = getAboutTop();
-        const update = () => {
-            setProgress(Math.min(1, Math.max(0, window.scrollY / aboutTop)));
-            const stmt = document.getElementById('statement');
-            const vh = window.innerHeight || 1;
-            let fade = 1;
-            if (stmt) {
-                const r = stmt.getBoundingClientRect();
-                const overlap = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
-                fade = 1 - Math.min(1, overlap / vh);
+        const frame = () => {
+            if (editRef.current) {
+                // locked keyframe — positions stay put regardless of scroll
+                const key = keyRef.current;
+                heroSvgs.forEach((_, i) => {
+                    const el = itemsRef.current[i];
+                    if (!el || dragRef.current?.i === i) return;
+                    const p = pct(dataRef.current[i][key]);
+                    const cur = curRef.current[i];
+                    cur.x += (p.x - cur.x) * 0.3;
+                    cur.y += (p.y - cur.y) * 0.3;
+                    el.style.transform = `translate(${cur.x}px, ${cur.y}px) translate(-50%, -50%)`;
+                    el.style.opacity = '1';
+                    el.style.pointerEvents = 'auto';
+                    opRef.current[i] = 1;
+                });
+                raf = requestAnimationFrame(frame);
+                return;
             }
-            setLayerOpacity(fade);
+
+            const sY = window.scrollY;
+            const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-dock]'));
+            const sT = docTop(document.getElementById('statement'));
+            const wT = docTop(document.getElementById('work') ?? document.getElementById('work-v2'));
+            const aT = docTop(document.querySelector('.about'));
+
+            heroSvgs.forEach((_, i) => {
+                const el = itemsRef.current[i];
+                // a logo being dragged is owned by the pointer; the journey reclaims it on release
+                if (!el || dragRef.current?.i === i) return;
+
+                const data = dataRef.current[i];
+                const heroPx = pct(data.hero);
+                const stmtPx = pct(data.statement);
+                const aboutPx = pct(data.about);
+
+                let target: Pt;
+                let releaseT = 0;
+                let targetOp = 1;
+
+                if (isAbout || sT == null || wT == null || aT == null) {
+                    target = isAbout ? aboutPx : heroPx;
+                } else {
+                    // dock point: 2 logos per card, clustered at the card's top-right
+                    let dockPx = aboutPx;
+                    if (cards.length) {
+                        const r = cards[i % cards.length].getBoundingClientRect();
+                        const slot = Math.floor(i / cards.length);
+                        dockPx = { x: r.right - 30 - slot * 36, y: r.top + 30 };
+                    }
+
+                    if (sY < sT) {
+                        target = lerpPt(heroPx, stmtPx, clamp01(sY / (sT || 1)));
+                    } else if (sY < wT) {
+                        // approaching the work section: fade the logos out
+                        const p = clamp01((sY - sT) / ((wT - sT) || 1));
+                        target = lerpPt(stmtPx, dockPx, p);
+                        targetOp = 1 - p;
+                    } else {
+                        const holdEnd = wT + (aT - wT) * 0.85;
+                        if (sY < holdEnd) {
+                            target = dockPx; // stay hidden while the work section is in view
+                            targetOp = 0;
+                        } else {
+                            releaseT = clamp01((sY - holdEnd) / ((aT - holdEnd) || 1));
+                            target = lerpPt(dockPx, aboutPx, releaseT);
+                            // only the about-bound logos fade back in past the work section
+                            targetOp = data.showOnAbout ? releaseT : 0;
+                        }
+                    }
+                }
+
+                const cur = curRef.current[i];
+                cur.x += (target.x - cur.x) * 0.16;
+                cur.y += (target.y - cur.y) * 0.16;
+
+                const op = opRef.current[i] + (targetOp - opRef.current[i]) * 0.16;
+                opRef.current[i] = op;
+
+                el.style.transform = `translate(${cur.x}px, ${cur.y}px) translate(-50%, -50%)`;
+                el.style.opacity = `${op}`;
+                // invisible logos (e.g. over the work section) must not eat clicks
+                el.style.pointerEvents = op > 0.05 ? 'auto' : 'none';
+            });
+
+            raf = requestAnimationFrame(frame);
         };
-        const onScroll = () => {
-            cancelAnimationFrame(raf);
-            raf = requestAnimationFrame(update);
-        };
-        const onResize = () => {
-            aboutTop = getAboutTop();
-            update();
-        };
-        update();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onResize);
-        return () => {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
-            cancelAnimationFrame(raf);
-        };
+        raf = requestAnimationFrame(frame);
+        return () => cancelAnimationFrame(raf);
     }, [isAbout]);
 
-    const startDrag = (
-        e: React.PointerEvent<HTMLImageElement>,
-        id: string,
-        heroPos: Point,
-        aboutPos: Point,
-    ) => {
-        const key: Endpoint = progress < 0.5 ? 'hero' : 'about';
-        const origin = key === 'hero' ? heroPos : aboutPos;
-        dragRef.current = {
-            id,
-            key,
-            pointerId: e.pointerId,
-            startX: e.clientX,
-            startY: e.clientY,
-            originX: origin.x,
-            originY: origin.y,
-        };
-        e.currentTarget.setPointerCapture(e.pointerId);
-        playSound(DRAG_SOUND, 0.4);
+    const save = async (): Promise<void> => {
+        setStatus('saving');
+        try {
+            const res = await fetch('/api/svg-positions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dataRef.current),
+            });
+            setStatus(res.ok ? 'saved' : 'error');
+        } catch {
+            setStatus('error');
+        }
     };
 
-    const onDrag = (e: React.PointerEvent<HTMLImageElement>) => {
-        const d = dragRef.current;
-        const rect = stageRef.current?.getBoundingClientRect();
-        if (!d || d.pointerId !== e.pointerId || !rect) return;
-        const nx = round1(d.originX + ((e.clientX - d.startX) / rect.width) * 100);
-        const ny = round1(d.originY + ((e.clientY - d.startY) / rect.height) * 100);
-        setOverrides(prev => ({
-            ...prev,
-            [d.key]: { ...prev[d.key], [d.id]: { x: nx, y: ny } },
-        }));
+    const onPointerDown = (i: number) => (e: ReactPointerEvent<HTMLImageElement>) => {
+        const el = itemsRef.current[i];
+        if (!el) return;
+        e.preventDefault();
+        el.setPointerCapture(e.pointerId);
+        const cur = curRef.current[i] ?? { x: e.clientX, y: e.clientY };
+        dragRef.current = { i, offX: e.clientX - cur.x, offY: e.clientY - cur.y };
     };
 
-    const endDrag = (e: React.PointerEvent<HTMLImageElement>) => {
-        const d = dragRef.current;
-        if (!d || d.pointerId !== e.pointerId) return;
+    const onPointerMove = (i: number) => (e: ReactPointerEvent<HTMLImageElement>) => {
+        const drag = dragRef.current;
+        if (!drag || drag.i !== i) return;
+        const el = itemsRef.current[i];
+        if (!el) return;
+        const x = clamp(e.clientX - drag.offX, 0, window.innerWidth);
+        const y = clamp(e.clientY - drag.offY, 0, window.innerHeight);
+        curRef.current[i] = { x, y };
+        el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    };
+
+    const onPointerUp = (i: number) => (e: ReactPointerEvent<HTMLImageElement>) => {
+        const drag = dragRef.current;
+        if (!drag || drag.i !== i) return;
         dragRef.current = null;
-    };
-
-    const capturePositions = () => {
-        const block = (key: Endpoint) =>
-            heroSvgs
-                .map(svg => {
-                    const o = overrides[key][svg.id];
-                    const x = round1(o?.x ?? svg[key].x);
-                    const y = round1(o?.y ?? svg[key].y);
-                    return `  // ${svg.id}\n    ${key}: { x: ${x}, y: ${y} },`;
-                })
-                .join('\n');
-        const out = `/* hero positions */\n${block('hero')}\n\n/* about positions */\n${block('about')}`;
-        console.log(out);
-        void navigator.clipboard?.writeText(out).catch(() => {});
+        const el = itemsRef.current[i];
+        el?.releasePointerCapture(e.pointerId);
+        // play mode: clearing the drag lets the scroll journey ease the logo back in.
+        // authoring mode: persist the new position for the locked section and save.
+        if (editRef.current) {
+            const cur = curRef.current[i];
+            dataRef.current[i][keyRef.current] = {
+                x: (cur.x / window.innerWidth) * 100,
+                y: (cur.y / window.innerHeight) * 100,
+            };
+            void save();
+        }
     };
 
     return (
-        <div className={styles['hero-svgs']} ref={stageRef}>
-            {heroSvgs.map(svg => {
-                const heroPos = overrides.hero[svg.id] ?? svg.hero;
-                const aboutPos = overrides.about[svg.id] ?? svg.about;
-                const x = lerp(heroPos.x, aboutPos.x, progress);
-                const y = lerp(heroPos.y, aboutPos.y, progress);
-                const opacity = (svg.showOnAbout ? 1 : 1 - progress) * layerOpacity;
-                return (
+        <>
+            <div className={`${styles['hero-svgs']} ${edit ? styles['hero-svgs--editing'] : ''}`}>
+                {heroSvgs.map((svg, i) => (
                     <img
                         key={svg.id}
+                        ref={el => {
+                            itemsRef.current[i] = el;
+                        }}
                         className={styles['hero-svgs--item']}
                         src={svg.src}
                         alt={svg.label}
                         draggable={false}
                         loading="lazy"
                         decoding="async"
-                        onMouseEnter={() => playSound(HOVER_SOUND, 0.35)}
-                        onPointerDown={
-                            interactive ? e => startDrag(e, svg.id, heroPos, aboutPos) : undefined
-                        }
-                        onPointerMove={interactive ? onDrag : undefined}
-                        onPointerUp={interactive ? endDrag : undefined}
-                        onPointerCancel={interactive ? endDrag : undefined}
-                        style={{
-                            left: `${x}%`,
-                            top: `${y}%`,
-                            width: `${svg.width}px`,
-                            opacity,
-                            transform: 'translate(-50%, -50%)',
-                            pointerEvents: 'auto',
-                        }}
+                        style={{ width: `${svg.width}px`, opacity: 0 }}
+                        onPointerDown={onPointerDown(i)}
+                        onPointerMove={onPointerMove(i)}
+                        onPointerUp={onPointerUp(i)}
+                        onPointerCancel={onPointerUp(i)}
                     />
-                );
-            })}
+                ))}
+            </div>
 
-            {SHOW_CAPTURE_BUTTON && (
-                <button
-                    type="button"
-                    className={styles['hero-svgs--capture']}
-                    onClick={capturePositions}
-                >
-                    Copy SVG positions
-                </button>
+            {isDev && (
+                <div className={styles['hero-svgs--controls']}>
+                    <button
+                        type="button"
+                        className={styles['hero-svgs--controls--btn']}
+                        onClick={toggleEdit}
+                        aria-pressed={edit}
+                    >
+                        {edit ? '● Positioning' : '○ Position'}
+                    </button>
+                    {edit && (
+                        <span className={styles['hero-svgs--controls--hint']}>
+                            drag logos · editing <b>{editKey}</b>
+                            {status === 'saving' && ' · saving…'}
+                            {status === 'saved' && ' · saved'}
+                            {status === 'error' && ' · save failed'}
+                        </span>
+                    )}
+                </div>
             )}
-        </div>
+        </>
     );
 }

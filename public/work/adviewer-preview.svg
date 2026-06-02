@@ -1,0 +1,33 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111626"/>
+      <stop offset="1" stop-color="#5E7CE2"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="240" y1="120" x2="960" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18213A"/>
+      <stop offset="1" stop-color="#22305B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="56" width="1056" height="638" rx="34" fill="#0E1424" fill-opacity="0.42" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="98" y="84" width="1004" height="582" rx="30" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="132" y="120" width="198" height="510" rx="26" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="360" y="120" width="708" height="72" rx="22" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="360" y="216" width="708" height="200" rx="28" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="360" y="440" width="340" height="190" rx="28" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="728" y="440" width="340" height="190" rx="28" fill="#FFFFFF" fill-opacity="0.08"/>
+  <circle cx="222" cy="192" r="58" fill="#F0C674"/>
+  <path d="M200 192C200 160 226 134 258 134C290 134 316 160 316 192C316 224 290 250 258 250C226 250 200 224 200 192Z" fill="#FFFFFF" fill-opacity="0.7"/>
+  <rect x="390" y="242" width="214" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.34"/>
+  <rect x="390" y="276" width="350" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.24"/>
+  <rect x="390" y="310" width="280" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.18"/>
+  <path d="M786 344C786 303 817 270 858 270C899 270 930 303 930 344C930 385 899 418 858 418C817 418 786 385 786 344Z" fill="#F08D57" fill-opacity="0.55"/>
+  <path d="M480 534L540 486L590 520L650 470" stroke="#7FE0D0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M480 574L548 528L606 548L650 506" stroke="#F0C674" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="764" y="500" width="284" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.28"/>
+  <rect x="764" y="536" width="214" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.18"/>
+  <rect x="764" y="572" width="254" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.12"/>
+  <text x="132" y="322" fill="#FFFFFF" fill-opacity="0.9" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="3">AD VIEWER</text>
+  <text x="390" y="168" fill="#FFFFFF" fill-opacity="0.55" font-size="16" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">BRANDED SKINS</text>
+</svg>

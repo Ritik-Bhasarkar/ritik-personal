@@ -26,7 +26,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-    title: 'Ritik Bhasarkar',
+    title: 'Ritik Bhasarkar - Frontend Developer',
     description: 'Personal website',
 };
 

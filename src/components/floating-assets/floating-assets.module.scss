@@ -13,13 +13,8 @@
 		padding: 0;
 		border: none;
 		background: none;
-		cursor: grab;
 		touch-action: none;
 		transform: translate(-50%, -50%) rotate(var(--rot)) scale(var(--scale));
-
-		&:active {
-			cursor: grabbing;
-		}
 		transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
 			left 0.6s cubic-bezier(0.22, 1, 0.36, 1),
 			transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);

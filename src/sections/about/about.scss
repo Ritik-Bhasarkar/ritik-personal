@@ -2,8 +2,8 @@
 
 .about {
 	position: relative;
+	z-index: 1;
 	overflow: hidden;
-	background-color: rgb(255, 250, 245);
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
