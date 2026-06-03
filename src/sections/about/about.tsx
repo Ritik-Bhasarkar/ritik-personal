@@ -1,4 +1,5 @@
 import FloatingAssets from "@/components/floating-assets/floating-assets";
+import ViewCounter from "@/components/view-counter/view-counter";
 import links from "../../../public/links.json";
 import "./about.scss";
 
@@ -29,6 +30,7 @@ export default function About() {
 				</div>
 			</div>
 			<div className="about--socials">
+				<ViewCounter />
 				<a
 					href={links.github}
 					target="_blank"

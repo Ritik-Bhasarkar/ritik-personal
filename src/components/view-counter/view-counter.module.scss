@@ -1,0 +1,41 @@
+@use "@/mixins.scss" as *;
+
+.view-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding-right: var(--spacing-md);
+    margin-right: var(--spacing-xs);
+    border-right: 1px solid rgba(20, 17, 15, 0.16);
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    color: rgb(107, 102, 96);
+
+    &--dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgb(46, 160, 92);
+        box-shadow: 0 0 0 0 rgba(46, 160, 92, 0.5);
+        animation: view-counter-pulse 2s ease-out infinite;
+    }
+}
+
+@keyframes view-counter-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 160, 92, 0.5);
+    }
+
+    70%,
+    100% {
+        box-shadow: 0 0 0 6px rgba(46, 160, 92, 0);
+    }
+}
+
+@media (max-width: 480px) {
+    .view-counter {
+        font-size: 11px;
+    }
+}
