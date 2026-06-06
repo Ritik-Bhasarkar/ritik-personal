@@ -8,7 +8,7 @@ import {
 	floatingAssets,
 	type AssetMode,
 } from '@/lib/assets/floating-assets';
-import { playSound } from '@/lib/sound';
+import { playSound, preloadSounds } from '@/lib/sound';
 import styles from './floating-assets.module.scss';
 
 // Dev-only position-capture tool — excluded from production builds.
@@ -78,6 +78,12 @@ export default function FloatingAssets() {
 	useEffect(() => {
 		stageRef.current?.parentElement?.setAttribute('data-mode', mode);
 	}, [mode]);
+
+	// Cache every asset sound up front so the first user gesture can unlock them
+	// all — otherwise hover-triggered playback is blocked by the autoplay policy.
+	useEffect(() => {
+		preloadSounds(floatingAssets.map(asset => asset.sound));
+	}, []);
 
 	const startDrag = (
 		e: React.PointerEvent<HTMLButtonElement>,

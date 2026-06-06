@@ -5,6 +5,9 @@
 			"title": "SEOkun",
 			"description": "a code-aware SEO audit tool that maps Lighthouse findings to specific source files so AI coding agents (via MCP) can fix the issues directly in code.",
 			"status": "In progress",
+			"category": "Dev Tool · MCP",
+			"year": "2026",
+			"tech": ["Next.js", "MCP", "Lighthouse", "TypeScript"],
 			"link": "https://github.com/Ritik-Bhasarkar/seokun",
 			"images": ["/work/seokun-1.png", "/work/seokun-2.png"]
 		},
@@ -12,6 +15,9 @@
 			"id": "kappax",
 			"title": "KappaX",
 			"description": "Developed the core web platform for KappaX, combining performance, SEO, content publishing, and commerce integrations.",
+			"category": "Web Platform",
+			"year": "2024 — 26",
+			"tech": ["Next.js 14", "App Router", "Rush monorepo", "SEO", "Commerce"],
 			"link": "https://kappax.io/",
 			"images": ["/work/kappax-1.png", "/work/kappax-2.png"]
 		},
@@ -19,6 +25,9 @@
 			"id": "portfolio-2023",
 			"title": "Portfolio Archive",
 			"description": "First Iteration of my portfolio. Focused on different animating components.",
+			"category": "Personal · Motion",
+			"year": "2023",
+			"tech": ["React", "Animation", "Vercel"],
 			"link": "https://bhasarkarritik.vercel.app/",
 			"images": ["/work/portfolio-1.png", "/work/portfolio-2.png"]
 		}

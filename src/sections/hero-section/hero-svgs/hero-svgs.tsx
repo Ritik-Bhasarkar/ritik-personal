@@ -124,7 +124,7 @@ export default function HeroSvgs({ variant = 'travel' }: HeroSvgsProps) {
             const sY = window.scrollY;
             const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-dock]'));
             const sT = docTop(document.getElementById('statement'));
-            const wT = docTop(document.getElementById('work') ?? document.getElementById('work-v2'));
+            const wT = docTop(document.getElementById('projects'));
             const aT = docTop(document.querySelector('.about'));
 
             heroSvgs.forEach((_, i) => {

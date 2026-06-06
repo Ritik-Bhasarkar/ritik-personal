@@ -10,7 +10,7 @@ export default function HeroFooter() {
             <button
                 type="button"
                 className={styles['hero-footer--scroll']}
-                onClick={() => scrollToSection('#work-v2')}
+                onClick={() => scrollToSection('#projects')}
             >
                 <span className={styles['hero-footer--scroll-arrow']} />
                 Scroll — <b>Selected Work</b>
