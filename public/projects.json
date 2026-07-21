@@ -3,21 +3,21 @@
 		{
 			"id": "seokun",
 			"title": "SEOkun",
-			"description": "a code-aware SEO audit tool that maps Lighthouse findings to specific source files so AI coding agents (via MCP) can fix the issues directly in code.",
+			"description": "A code-aware SEO audit engine that runs Lighthouse over Playwright and traces every finding back to the exact file and line, so AI agents like Claude can fix issues directly in code — built around GitHub OAuth, an MCP server, and a decoupled audit engine.",
 			"status": "In progress",
 			"category": "Dev Tool · MCP",
 			"year": "2026",
-			"tech": ["Next.js", "MCP", "Lighthouse", "TypeScript"],
+			"tech": ["Next.js", "Playwright", "Lighthouse", "MCP", "TypeScript"],
 			"link": "https://github.com/Ritik-Bhasarkar/seokun",
 			"images": ["/work/seokun-1.png", "/work/seokun-2.png"]
 		},
 		{
 			"id": "kappax",
 			"title": "KappaX",
-			"description": "Developed the core web platform for KappaX, combining performance, SEO, content publishing, and commerce integrations.",
+			"description": "End-to-end build of the KappaX marketing platform on Next.js 14 App Router in a Rush monorepo — core architecture, shared component library, and a Directus CMS blog with MDX/ISR — plus SEO work that took Lighthouse from 48% to 85–90% with sub-2s mobile LCP.",
 			"category": "Web Platform",
 			"year": "2024 — 26",
-			"tech": ["Next.js 14", "App Router", "Rush monorepo", "SEO", "Commerce"],
+			"tech": ["Next.js 14", "Rush Monorepo", "Directus CMS", "GraphQL", "SEO"],
 			"link": "https://kappax.io/",
 			"images": ["/work/kappax-1.png", "/work/kappax-2.png"]
 		},
