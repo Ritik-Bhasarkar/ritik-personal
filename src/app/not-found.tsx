@@ -19,6 +19,15 @@ export default function NotFound() {
                     <span>←</span> Back to home
                 </Link>
             </section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
+            <section>Test</section>
 
             <p className={styles.coordinates}>404° 00&apos; 00&quot; N / 404° 00&apos; 00&quot; E</p>
         </main>
