@@ -25,6 +25,8 @@ const dancingScript = Dancing_Script({
     variable: '--font-display',
 });
 
+const metaImage = 'https://www.ritikb.com/images/meta/meta-image.png';
+
 export const metadata: Metadata = {
     metadataBase: new URL(
         process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.ritikb.com',
@@ -37,9 +39,10 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: '/images/meta/meta-image.png',
+                url: metaImage,
                 width: 2940,
                 height: 1602,
+                type: 'image/png',
                 alt: 'Ritik Bhasarkar - Frontend Developer & wannabe Creative',
             },
         ],
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Ritik Bhasarkar',
         description: 'Frontend Developer & wannabe Creative',
-        images: ['/images/meta/meta-image.png'],
+        images: [metaImage],
     },
 };
 
