@@ -26,8 +26,30 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-    title: 'Ritik Bhasarkar - Frontend Developer',
-    description: 'Personal website',
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+    ),
+    title: 'Ritik Bhasarkar',
+    description: 'Frontend Developer & wannabe Creative',
+    openGraph: {
+        title: 'Ritik Bhasarkar',
+        description: 'Frontend Developer & wannabe Creative',
+        type: 'website',
+        images: [
+            {
+                url: '/images/meta/meta-image.png',
+                width: 2940,
+                height: 1602,
+                alt: 'Ritik Bhasarkar - Frontend Developer & wannabe Creative',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Ritik Bhasarkar',
+        description: 'Frontend Developer & wannabe Creative',
+        images: ['/images/meta/meta-image.png'],
+    },
 };
 
 export default function RootLayout({
