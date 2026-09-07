@@ -27,7 +27,7 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
     metadataBase: new URL(
-        process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+        process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.ritikb.com',
     ),
     title: 'Ritik Bhasarkar',
     description: 'Frontend Developer & wannabe Creative',
