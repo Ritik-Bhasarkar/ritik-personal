@@ -33,9 +33,6 @@ export const metadata: Metadata = {
 	),
 	title: "Ritik Bhasarkar",
 	description: "Frontend Developer & wannabe Creative",
-	icons: {
-		icon: "/favicon.svg",
-	},
 	openGraph: {
 		title: "Ritik Bhasarkar",
 		description: "Frontend Developer & wannabe Creative",
